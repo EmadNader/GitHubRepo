@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="SenNetTest" nsURI="http://www.sennet.xtext" nsPrefix="sn">
+  <eClassifiers xsi:type="ecore:EClass" name="WSNapp" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number_of_nodes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="network" eType="#//Network"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jobs" upperBound="-1" eType="#//Job"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Network" eSuperTypes="#//Identifiable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interNodeComm" eType="#//enums/InterNodeComm"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="routingProtocol" eType="#//enums/RoutingProtocol"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SensorNode" eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Cluster" eSuperTypes="#//Identifiable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="head" eType="#//ClusterHead"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodeList" unique="false"
+        upperBound="-1" eType="#//SensorNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Job" eSuperTypes="#//Identifiable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Processing"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" eSuperTypes="#//Identifiable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Identifiable" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComputationNode" eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ClusterHead" eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sink" eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FlatNetwork" eSuperTypes="#//Network">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="computationNode" upperBound="-1"
+        eType="#//ComputationNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
+        eType="#//SensorNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flatSink" eType="#//Sink"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClusteredNetwork" eSuperTypes="#//Network">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clusters" upperBound="-1"
+        eType="#//Cluster" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clusteredSink" eType="#//Sink"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sensor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sensorType" eType="#//enums/SensorType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="#//Identifiable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="#//enums/Position"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodeSensors" upperBound="-1"
+        eType="#//Sensor" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContinousJob" eSuperTypes="#//Job">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processContinousJob" eType="#//Processing"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventDrivenJob" eSuperTypes="#//Job">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defineEvent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processEventJob" eType="#//Processing"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PeriodicJob" eSuperTypes="#//Job">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defineTimer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processPeriodicJob" eType="#//Processing"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SenseForward" eSuperTypes="#//Processing">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="senseForwardToNode" eType="#//Node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AggregationClass" eSuperTypes="#//Processing">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aggregation" eType="#//enums/Aggregation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageToNode" eType="#//Node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FusionClass" eSuperTypes="#//Processing">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fusion" eType="#//enums/Fusion"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fusionToCompNode" eType="#//ComputationNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fusionToClusterHead" eType="#//ClusterHead"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageSent" eSuperTypes="#//Processing">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageSent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ioPort" eType="#//enums/PortType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageToNode" eType="#//Node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StorData" eSuperTypes="#//Processing">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="storeDataToNode" eType="#//Node"/>
+  </eClassifiers>
+  <eSubpackages name="enums" nsURI="http://www.sennet.xtext/enums" nsPrefix="sne">
+    <eClassifiers xsi:type="ecore:EEnum" name="SensorType">
+      <eLiterals name="accelerometer" literal="accelerometer"/>
+      <eLiterals name="light" value="1" literal="light"/>
+      <eLiterals name="location" value="2" literal="location"/>
+      <eLiterals name="microphone" value="3" literal="microphone"/>
+      <eLiterals name="temperature" value="4" literal="temperature"/>
+      <eLiterals name="pressure" value="5" literal="pressure"/>
+      <eLiterals name="humidity" value="6" literal="humidity"/>
+      <eLiterals name="chemical" value="7" literal="chemical"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="PortType">
+      <eLiterals name="serial" literal="serial"/>
+      <eLiterals name="usb" value="1" literal="usb"/>
+      <eLiterals name="transmitter" value="2" literal="transmitter"/>
+      <eLiterals name="receiver" value="3" literal="receiver"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="Fusion">
+      <eLiterals name="classification" literal="classification"/>
+      <eLiterals name="event_detection" value="1" literal="event_detection"/>
+      <eLiterals name="tracking" value="2" literal="tracking"/>
+      <eLiterals name="decision_making" value="3" literal="decision_making"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="Aggregation">
+      <eLiterals name="filtering" literal="filtering"/>
+      <eLiterals name="compression" value="1" literal="compression"/>
+      <eLiterals name="max" value="2" literal="max"/>
+      <eLiterals name="min" value="3" literal="min"/>
+      <eLiterals name="avg" value="4" literal="ávg"/>
+      <eLiterals name="count" value="5" literal="count"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="Position">
+      <eLiterals name="mobile" literal="mobile"/>
+      <eLiterals name="static" value="1" literal="static"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="RoutingProtocol">
+      <eLiterals name="leach" literal="leach"/>
+      <eLiterals name="lqrp" value="1" literal="lqrp"/>
+      <eLiterals name="spin" value="2" literal="spin"/>
+      <eLiterals name="aodv" value="3" literal="aodv"/>
+      <eLiterals name="dodv" value="4" literal="dodv"/>
+      <eLiterals name="dsr" value="5" literal="dsr"/>
+      <eLiterals name="dsdv" value="6" literal="dsdv"/>
+      <eLiterals name="gsr" value="7" literal="gsr"/>
+      <eLiterals name="heed" value="8" literal="heed"/>
+      <eLiterals name="gaf" value="9" literal="gaf"/>
+      <eLiterals name="gear" value="10" literal="gear"/>
+      <eLiterals name="tbf" value="11" literal="tbf"/>
+      <eLiterals name="ead" value="12" literal="ead"/>
+      <eLiterals name="pegasis" value="13" literal="pegasis"/>
+      <eLiterals name="teen" value="14" literal="teen"/>
+      <eLiterals name="speed" value="15" literal="speed"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="InterNodeComm">
+      <eLiterals name="BT" literal="BT"/>
+      <eLiterals name="Zigbee" value="1" literal="Zigbee"/>
+      <eLiterals name="WLan" value="2" literal="WLan"/>
+      <eLiterals name="RF" value="3" literal="RF"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>
