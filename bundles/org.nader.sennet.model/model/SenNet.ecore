@@ -86,10 +86,14 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
           eType="#//toplevelstructure/AbstractResource"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SensorNode" eSuperTypes="#//node/AbstractNode"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ClusterHeadNode" eSuperTypes="#//node/AbstractNode"/>
-    <eClassifiers xsi:type="ecore:EClass" name="SinkNode" eSuperTypes="#//node/AbstractNode"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ComputationNode" eSuperTypes="#//node/AbstractNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractFlatNode" abstract="true"
+        eSuperTypes="#//node/AbstractNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractClusterNode" abstract="true"
+        eSuperTypes="#//node/AbstractNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SensorNode" eSuperTypes="#//node/AbstractClusterNode #//node/AbstractFlatNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ClusterHeadNode" eSuperTypes="#//node/AbstractClusterNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SinkNode" eSuperTypes="#//node/AbstractFlatNode #//node/AbstractClusterNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ComputationNode" eSuperTypes="#//node/AbstractFlatNode"/>
   </eSubpackages>
   <eSubpackages name="job" nsURI="http://www.nader.org/sennet/jb" nsPrefix="jb">
     <eClassifiers xsi:type="ecore:EClass" name="AbstractJob" abstract="true" eSuperTypes="#//toplevelstructure/Identifiable">
@@ -108,23 +112,35 @@
     <eClassifiers xsi:type="ecore:EClass" name="RequestReplayJob" eSuperTypes="#//job/AbstractJob"/>
     <eSubpackages name="actions" nsURI="http://www.nader.org/sennet/jb/ac" nsPrefix="ac">
       <eClassifiers xsi:type="ecore:EClass" name="AbstractJobAction" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="sinkNode" eType="#//node/SinkNode"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="AbstractCommonJobAction" abstract="true"
+          eSuperTypes="#//job/actions/AbstractJobAction">
         <eStructuralFeatures xsi:type="ecore:EReference" name="targetNode" eType="#//node/AbstractNode"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="SenseForwardAction" eSuperTypes="#//job/actions/AbstractJobAction"/>
-      <eClassifiers xsi:type="ecore:EClass" name="AggregationAction" eSuperTypes="#//job/actions/AbstractJobAction">
+      <eClassifiers xsi:type="ecore:EClass" name="AbstractNodeMemoryAction" abstract="true"
+          eSuperTypes="#//job/actions/AbstractCommonJobAction"/>
+      <eClassifiers xsi:type="ecore:EClass" name="AbstractMessageAction" abstract="true"
+          eSuperTypes="#//job/actions/AbstractCommonJobAction">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SenseForwardAction" eSuperTypes="#//job/actions/AbstractCommonJobAction"/>
+      <eClassifiers xsi:type="ecore:EClass" name="AggregationAction" eSuperTypes="#//job/actions/AbstractCommonJobAction">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="aggregation" eType="#//enums/Aggregation"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="FusionAction" eSuperTypes="#//job/actions/AbstractJobAction">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="fusion" eType="#//enums/Fusion"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="targetCompuNode" eType="#//node/ComputationNode"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="targetClusterHead"
-            eType="#//node/ClusterHeadNode"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="compuNode" eType="#//node/ComputationNode"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="clusterHead" eType="#//node/ClusterHeadNode"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="SendMessageAction" eSuperTypes="#//job/actions/AbstractJobAction">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//port/AbstractPort"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ReadNodeMemoryAction" eSuperTypes="#//job/actions/AbstractNodeMemoryAction"/>
+      <eClassifiers xsi:type="ecore:EClass" name="WriteNodeMemoryAction" eSuperTypes="#//job/actions/AbstractNodeMemoryAction"/>
+      <eClassifiers xsi:type="ecore:EClass" name="SendMessageAction" eSuperTypes="#//job/actions/AbstractCommonJobAction">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="outPort" eType="#//port/OutPort"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="StoreDataAction" eSuperTypes="#//job/actions/AbstractJobAction"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ReceiveMessageAction" eSuperTypes="#//job/actions/AbstractCommonJobAction">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="inPort" eType="#//port/InPort"/>
+      </eClassifiers>
     </eSubpackages>
   </eSubpackages>
   <eSubpackages name="sensor" nsURI="http://www.nader.org/sennet/sn" nsPrefix="sn">
@@ -140,8 +156,8 @@
   </eSubpackages>
   <eSubpackages name="port" nsURI="http://www.nader.org/sennet/pt" nsPrefix="pt">
     <eClassifiers xsi:type="ecore:EClass" name="AbstractPort" abstract="true" eSuperTypes="#//toplevelstructure/AbstractResource"/>
-    <eClassifiers xsi:type="ecore:EClass" name="UsbPort" eSuperTypes="#//port/AbstractPort"/>
-    <eClassifiers xsi:type="ecore:EClass" name="SerialPort" eSuperTypes="#//port/AbstractPort"/>
+    <eClassifiers xsi:type="ecore:EClass" name="UsbPort" eSuperTypes="#//port/InPort #//port/OutPort"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SerialPort" eSuperTypes="#//port/InPort #//port/OutPort"/>
     <eClassifiers xsi:type="ecore:EClass" name="OutPort" eSuperTypes="#//port/AbstractPort"/>
     <eClassifiers xsi:type="ecore:EClass" name="InPort" eSuperTypes="#//port/AbstractPort"/>
   </eSubpackages>
@@ -156,7 +172,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FlatNetwork" eSuperTypes="#//network/AbstractNetwork">
       <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
-          eType="#//node/AbstractNode" containment="true"/>
+          eType="#//node/AbstractFlatNode" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="compuNode" eType="#//node/ComputationNode"
           containment="true"/>
     </eClassifiers>
@@ -165,9 +181,10 @@
           eType="#//network/Cluster" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Cluster" eSuperTypes="#//toplevelstructure/Identifiable">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="head" eType="#//node/ClusterHeadNode"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" unique="false"
-          upperBound="-1" eType="#//node/AbstractNode"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="head" eType="#//node/ClusterHeadNode"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
+          eType="#//node/AbstractClusterNode" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
           eType="#//toplevelstructure/AbstractResource"/>
     </eClassifiers>
