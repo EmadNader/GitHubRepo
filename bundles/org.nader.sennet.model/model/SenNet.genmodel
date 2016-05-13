@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.nader.sennet.model/src" modelPluginID="org.nader.sennet.model"
+    modelName="SenNet" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>../../org.polarsys.capella.common.mdsofa.common/SenNet.ecore</foreignModel>
+  <genPackages prefix="Sennet" disposableProviderFactory="true" ecorePackage="SenNet.ecore#/">
+    <genClasses ecoreClass="SenNet.ecore#//WSNapp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SenNet.ecore#//WSNapp/number_of_nodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SenNet.ecore#//WSNapp/network"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SenNet.ecore#//WSNapp/jobs"/>
+    </genClasses>
+    <genClasses ecoreClass="SenNet.ecore#//Data">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SenNet.ecore#//Data/general_activity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SenNet.ecore#//Data/aggregation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SenNet.ecore#//Data/resources"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SenNet.ecore#//Data/fusion"/>
+    </genClasses>
+    <nestedGenPackages prefix="Toplevelstructure" disposableProviderFactory="true"
+        ecorePackage="SenNet.ecore#//toplevelstructure">
+      <genClasses image="false" ecoreClass="SenNet.ecore#//toplevelstructure/Identifiable">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SenNet.ecore#//toplevelstructure/Identifiable/id"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SenNet.ecore#//toplevelstructure/NamedElement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SenNet.ecore#//toplevelstructure/NamedElement/name"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SenNet.ecore#//toplevelstructure/AbstractResource">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SenNet.ecore#//toplevelstructure/AbstractResource/message"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Enums" disposableProviderFactory="true" ecorePackage="SenNet.ecore#//enums">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SenNet.ecore#//enums/Fusion">
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/Fusion/classification"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/Fusion/event_detection"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/Fusion/tracking"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/Fusion/decision_making"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SenNet.ecore#//enums/Aggregation">
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/Aggregation/filtering"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/Aggregation/compression"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/Aggregation/max"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/Aggregation/min"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/Aggregation/avg"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/Aggregation/count"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SenNet.ecore#//enums/GeneralActivity">
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/GeneralActivity/data_forward"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/GeneralActivity/store_data"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/GeneralActivity/message_sent"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SenNet.ecore#//enums/Position">
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/Position/mobile"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/Position/static"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SenNet.ecore#//enums/RoutingProtocol">
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/RoutingProtocol/leach"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/RoutingProtocol/lqrp"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/RoutingProtocol/spin"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/RoutingProtocol/aodv"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/RoutingProtocol/dodv"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/RoutingProtocol/dsr"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/RoutingProtocol/dsdv"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/RoutingProtocol/gsr"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/RoutingProtocol/heed"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/RoutingProtocol/gaf"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/RoutingProtocol/gear"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/RoutingProtocol/tbf"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/RoutingProtocol/ead"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/RoutingProtocol/pegasis"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/RoutingProtocol/teen"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/RoutingProtocol/speed"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SenNet.ecore#//enums/InterNodeComm">
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/InterNodeComm/BT"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/InterNodeComm/Zigbee"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/InterNodeComm/WLan"/>
+        <genEnumLiterals ecoreEnumLiteral="SenNet.ecore#//enums/InterNodeComm/RF"/>
+      </genEnums>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Node" disposableProviderFactory="true" ecorePackage="SenNet.ecore#//node">
+      <genClasses image="false" ecoreClass="SenNet.ecore#//node/AbstractNode">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SenNet.ecore#//node/AbstractNode/position"/>
+      </genClasses>
+      <genClasses ecoreClass="SenNet.ecore#//node/SensorNode"/>
+      <genClasses ecoreClass="SenNet.ecore#//node/ClusterHeadNode"/>
+      <genClasses ecoreClass="SenNet.ecore#//node/SinkNode"/>
+      <genClasses ecoreClass="SenNet.ecore#//node/ComputationNode"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Job" disposableProviderFactory="true" ecorePackage="SenNet.ecore#//job">
+      <genClasses image="false" ecoreClass="SenNet.ecore#//job/AbstractJob">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SenNet.ecore#//job/AbstractJob/assignedElementId"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SenNet.ecore#//job/AbstractJob/defineTimer"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SenNet.ecore#//job/AbstractJob/data"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SenNet.ecore#//job/AbstractJob/defineEvent"/>
+      </genClasses>
+      <genClasses ecoreClass="SenNet.ecore#//job/ContinuousJob"/>
+      <genClasses ecoreClass="SenNet.ecore#//job/EventDrivenJob"/>
+      <genClasses ecoreClass="SenNet.ecore#//job/PeriodicJob"/>
+      <genClasses ecoreClass="SenNet.ecore#//job/RequestReplayJob"/>
+      <nestedGenPackages prefix="Actions" disposableProviderFactory="true" ecorePackage="SenNet.ecore#//job/actions">
+        <genClasses image="false" ecoreClass="SenNet.ecore#//job/actions/AbstractJobAction">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference SenNet.ecore#//job/actions/AbstractJobAction/targetNode"/>
+        </genClasses>
+        <genClasses ecoreClass="SenNet.ecore#//job/actions/SenseForwardAction"/>
+        <genClasses ecoreClass="SenNet.ecore#//job/actions/AggregationAction">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SenNet.ecore#//job/actions/AggregationAction/aggregation"/>
+        </genClasses>
+        <genClasses ecoreClass="SenNet.ecore#//job/actions/FusionAction">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SenNet.ecore#//job/actions/FusionAction/fusion"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference SenNet.ecore#//job/actions/FusionAction/targetCompuNode"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference SenNet.ecore#//job/actions/FusionAction/targetClusterHead"/>
+        </genClasses>
+        <genClasses ecoreClass="SenNet.ecore#//job/actions/SendMessageAction">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SenNet.ecore#//job/actions/SendMessageAction/text"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference SenNet.ecore#//job/actions/SendMessageAction/port"/>
+        </genClasses>
+        <genClasses ecoreClass="SenNet.ecore#//job/actions/StoreDataAction"/>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Sensor" disposableProviderFactory="true" ecorePackage="SenNet.ecore#//sensor">
+      <genClasses image="false" ecoreClass="SenNet.ecore#//sensor/AbstractSensor"/>
+      <genClasses ecoreClass="SenNet.ecore#//sensor/AccelerometerSensor"/>
+      <genClasses ecoreClass="SenNet.ecore#//sensor/LightSensor"/>
+      <genClasses ecoreClass="SenNet.ecore#//sensor/LocationSensor"/>
+      <genClasses ecoreClass="SenNet.ecore#//sensor/MicrophoneSensor"/>
+      <genClasses ecoreClass="SenNet.ecore#//sensor/TemperatureSensor"/>
+      <genClasses ecoreClass="SenNet.ecore#//sensor/PressureSensor"/>
+      <genClasses ecoreClass="SenNet.ecore#//sensor/HumiditySensor"/>
+      <genClasses ecoreClass="SenNet.ecore#//sensor/ChemicalSensor"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Port" disposableProviderFactory="true" ecorePackage="SenNet.ecore#//port">
+      <genClasses image="false" ecoreClass="SenNet.ecore#//port/AbstractPort"/>
+      <genClasses ecoreClass="SenNet.ecore#//port/UsbPort"/>
+      <genClasses ecoreClass="SenNet.ecore#//port/SerialPort"/>
+      <genClasses ecoreClass="SenNet.ecore#//port/OutPort"/>
+      <genClasses ecoreClass="SenNet.ecore#//port/InPort"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Network" disposableProviderFactory="true" ecorePackage="SenNet.ecore#//network">
+      <genClasses image="false" ecoreClass="SenNet.ecore#//network/AbstractNetwork">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SenNet.ecore#//network/AbstractNetwork/interNodeComm"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SenNet.ecore#//network/AbstractNetwork/routingProtocol"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SenNet.ecore#//network/AbstractNetwork/sink"/>
+      </genClasses>
+      <genClasses ecoreClass="SenNet.ecore#//network/FlatNetwork">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SenNet.ecore#//network/FlatNetwork/nodes"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SenNet.ecore#//network/FlatNetwork/compuNode"/>
+      </genClasses>
+      <genClasses ecoreClass="SenNet.ecore#//network/ClusteredNetwork">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SenNet.ecore#//network/ClusteredNetwork/clusters"/>
+      </genClasses>
+      <genClasses ecoreClass="SenNet.ecore#//network/Cluster">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SenNet.ecore#//network/Cluster/head"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SenNet.ecore#//network/Cluster/nodes"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>
