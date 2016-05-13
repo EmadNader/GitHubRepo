@@ -39,11 +39,6 @@
       <eLiterals name="avg" value="4" literal="ávg"/>
       <eLiterals name="count" value="5" literal="count"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="GeneralActivity">
-      <eLiterals name="data_forward" literal="data_forward"/>
-      <eLiterals name="store_data" value="1" literal="stor_data"/>
-      <eLiterals name="message_sent" value="2" literal="message_sent"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="Position">
       <eLiterals name="mobile" literal="mobile"/>
       <eLiterals name="static" value="1" literal="static"/>
