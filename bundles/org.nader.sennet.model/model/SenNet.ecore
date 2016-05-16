@@ -83,8 +83,10 @@
   <eSubpackages name="node" nsURI="http://www.nader.org/sennet/nd" nsPrefix="nd">
     <eClassifiers xsi:type="ecore:EClass" name="AbstractNode" abstract="true" eSuperTypes="#//toplevelstructure/Identifiable">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="#//enums/Position"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
-          eType="#//toplevelstructure/AbstractResource"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
+          eType="#//port/AbstractPort"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" upperBound="-1"
+          eType="#//sensor/AbstractSensor"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AbstractFlatNode" abstract="true"
         eSuperTypes="#//node/AbstractNode"/>
@@ -99,7 +101,6 @@
     <eClassifiers xsi:type="ecore:EClass" name="AbstractJob" abstract="true" eSuperTypes="#//toplevelstructure/Identifiable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//job/actions/AbstractJobAction"
           containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="node" eType="#//node/AbstractNode"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ContinuousJob" eSuperTypes="#//job/AbstractJob"/>
     <eClassifiers xsi:type="ecore:EClass" name="EventDrivenJob" eSuperTypes="#//job/AbstractJob">
@@ -168,8 +169,10 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="interNodeComm" eType="#//enums/InterNodeComm"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="routingProtocol" eType="#//enums/RoutingProtocol"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="sink" eType="#//node/SinkNode"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
-          eType="#//toplevelstructure/AbstractResource" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" upperBound="-1"
+          eType="#//sensor/AbstractSensor" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
+          eType="#//port/AbstractPort" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FlatNetwork" eSuperTypes="#//network/AbstractNetwork">
       <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
