@@ -69,14 +69,14 @@ public enum LogicalSymbol implements Enumerator {
 	LESS_OR_EQUAL_THAN(4, "lessOrEqualThan", "lessOrEqualThan"),
 
 	/**
-	 * The '<em><b>Not</b></em>' literal object.
+	 * The '<em><b>Not Equal</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #NOT_VALUE
+	 * @see #NOT_EQUAL_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	NOT(5, "not", "not");
+	NOT_EQUAL(5, "notEqual", "notEqual");
 
 	/**
 	 * The '<em><b>Equal</b></em>' literal value.
@@ -154,19 +154,19 @@ public enum LogicalSymbol implements Enumerator {
 	public static final int LESS_OR_EQUAL_THAN_VALUE = 4;
 
 	/**
-	 * The '<em><b>Not</b></em>' literal value.
+	 * The '<em><b>Not Equal</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Not</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Not Equal</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #NOT
-	 * @model name="not"
+	 * @see #NOT_EQUAL
+	 * @model name="notEqual"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NOT_VALUE = 5;
+	public static final int NOT_EQUAL_VALUE = 5;
 
 	/**
 	 * An array of all the '<em><b>Logical Symbol</b></em>' enumerators.
@@ -181,7 +181,7 @@ public enum LogicalSymbol implements Enumerator {
 			GREATER_OR_EQUAL_THAN,
 			LESS_THAN,
 			LESS_OR_EQUAL_THAN,
-			NOT,
+			NOT_EQUAL,
 		};
 
 	/**
@@ -237,7 +237,7 @@ public enum LogicalSymbol implements Enumerator {
 			case GREATER_OR_EQUAL_THAN_VALUE: return GREATER_OR_EQUAL_THAN;
 			case LESS_THAN_VALUE: return LESS_THAN;
 			case LESS_OR_EQUAL_THAN_VALUE: return LESS_OR_EQUAL_THAN;
-			case NOT_VALUE: return NOT;
+			case NOT_EQUAL_VALUE: return NOT_EQUAL;
 		}
 		return null;
 	}

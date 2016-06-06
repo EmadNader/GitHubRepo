@@ -2,7 +2,16 @@
  */
 package org.nader.sennet.job;
 
-import org.nader.sennet.job.actions.AbstractJobAction;
+import org.eclipse.emf.common.util.EList;
+
+import org.nader.sennet.job.jobaction.AbstratAction;
+
+import org.nader.sennet.job.jobtrigger.AbstractStartEndingJobTrigger;
+
+import org.nader.sennet.network.AbstractNetwork;
+
+import org.nader.sennet.node.AbstractNode;
+
 import org.nader.sennet.toplevelstructure.Identifiable;
 
 /**
@@ -13,7 +22,10 @@ import org.nader.sennet.toplevelstructure.Identifiable;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.nader.sennet.job.AbstractJob#getAction <em>Action</em>}</li>
+ *   <li>{@link org.nader.sennet.job.AbstractJob#getJobTargetNode <em>Job Target Node</em>}</li>
+ *   <li>{@link org.nader.sennet.job.AbstractJob#getJobTargetNetwork <em>Job Target Network</em>}</li>
+ *   <li>{@link org.nader.sennet.job.AbstractJob#getStartEndTrigger <em>Start End Trigger</em>}</li>
+ *   <li>{@link org.nader.sennet.job.AbstractJob#getJobaction <em>Jobaction</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,29 +35,87 @@ import org.nader.sennet.toplevelstructure.Identifiable;
  */
 public interface AbstractJob extends Identifiable {
 	/**
-	 * Returns the value of the '<em><b>Action</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Job Target Node</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Action</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Job Target Node</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Action</em>' containment reference.
-	 * @see #setAction(AbstractJobAction)
-	 * @see org.nader.sennet.job.JobPackage#getAbstractJob_Action()
+	 * @return the value of the '<em>Job Target Node</em>' containment reference.
+	 * @see #setJobTargetNode(AbstractNode)
+	 * @see org.nader.sennet.job.JobPackage#getAbstractJob_JobTargetNode()
 	 * @model containment="true"
 	 * @generated
 	 */
-	AbstractJobAction getAction();
+	AbstractNode getJobTargetNode();
 
 	/**
-	 * Sets the value of the '{@link org.nader.sennet.job.AbstractJob#getAction <em>Action</em>}' containment reference.
+	 * Sets the value of the '{@link org.nader.sennet.job.AbstractJob#getJobTargetNode <em>Job Target Node</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Action</em>' containment reference.
-	 * @see #getAction()
+	 * @param value the new value of the '<em>Job Target Node</em>' containment reference.
+	 * @see #getJobTargetNode()
 	 * @generated
 	 */
-	void setAction(AbstractJobAction value);
+	void setJobTargetNode(AbstractNode value);
+
+	/**
+	 * Returns the value of the '<em><b>Job Target Network</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Job Target Network</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Job Target Network</em>' containment reference.
+	 * @see #setJobTargetNetwork(AbstractNetwork)
+	 * @see org.nader.sennet.job.JobPackage#getAbstractJob_JobTargetNetwork()
+	 * @model containment="true"
+	 * @generated
+	 */
+	AbstractNetwork getJobTargetNetwork();
+
+	/**
+	 * Sets the value of the '{@link org.nader.sennet.job.AbstractJob#getJobTargetNetwork <em>Job Target Network</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Job Target Network</em>' containment reference.
+	 * @see #getJobTargetNetwork()
+	 * @generated
+	 */
+	void setJobTargetNetwork(AbstractNetwork value);
+
+	/**
+	 * Returns the value of the '<em><b>Start End Trigger</b></em>' containment reference list.
+	 * The list contents are of type {@link org.nader.sennet.job.jobtrigger.AbstractStartEndingJobTrigger}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Start End Trigger</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Start End Trigger</em>' containment reference list.
+	 * @see org.nader.sennet.job.JobPackage#getAbstractJob_StartEndTrigger()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<AbstractStartEndingJobTrigger> getStartEndTrigger();
+
+	/**
+	 * Returns the value of the '<em><b>Jobaction</b></em>' containment reference list.
+	 * The list contents are of type {@link org.nader.sennet.job.jobaction.AbstratAction}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Jobaction</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Jobaction</em>' containment reference list.
+	 * @see org.nader.sennet.job.JobPackage#getAbstractJob_Jobaction()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<AbstratAction> getJobaction();
 
 } // AbstractJob

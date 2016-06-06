@@ -71,12 +71,8 @@ public class SennetAdapterFactory extends AdapterFactoryImpl {
 	protected SennetSwitch<Adapter> modelSwitch =
 		new SennetSwitch<Adapter>() {
 			@Override
-			public Adapter caseWSNapp(WSNapp object) {
-				return createWSNappAdapter();
-			}
-			@Override
-			public Adapter caseLogicalCondition(LogicalCondition object) {
-				return createLogicalConditionAdapter();
+			public Adapter caseSeNetApp(SeNetApp object) {
+				return createSeNetAppAdapter();
 			}
 			@Override
 			public Adapter caseIdentifiable(Identifiable object) {
@@ -107,30 +103,16 @@ public class SennetAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nader.sennet.WSNapp <em>WS Napp</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nader.sennet.SeNetApp <em>Se Net App</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nader.sennet.WSNapp
+	 * @see org.nader.sennet.SeNetApp
 	 * @generated
 	 */
-	public Adapter createWSNappAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nader.sennet.LogicalCondition <em>Logical Condition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nader.sennet.LogicalCondition
-	 * @generated
-	 */
-	public Adapter createLogicalConditionAdapter() {
+	public Adapter createSeNetAppAdapter() {
 		return null;
 	}
 

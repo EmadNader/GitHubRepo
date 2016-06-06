@@ -1,29 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sennet" nsURI="http://www.nader.org/sennet" nsPrefix="sn">
-  <eClassifiers xsi:type="ecore:EClass" name="WSNapp" eSuperTypes="#//toplevelstructure/NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="network" eType="#//network/AbstractNetwork"
-        containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SeNetApp" eSuperTypes="#//toplevelstructure/NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="jobs" upperBound="-1" eType="#//job/AbstractJob"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LogicalCondition">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="jobSchedule" eType="#//enums/JobSchedule"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sensorTerm" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logicalSymbol" eType="#//enums/LogicalSymbol"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eSubpackages name="toplevelstructure" nsURI="http://www.nader.org/sennet/tls" nsPrefix="tls">
-    <eClassifiers xsi:type="ecore:EClass" name="Identifiable" abstract="true">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" eSuperTypes="#//toplevelstructure/Identifiable">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AbstractResource" abstract="true"/>
-  </eSubpackages>
   <eSubpackages name="enums" nsURI="http://www.nader.org/sennet/enums" nsPrefix="sne">
     <eClassifiers xsi:type="ecore:EEnum" name="Fusion">
       <eLiterals name="classification" literal="classification"/>
@@ -60,6 +41,9 @@
       <eLiterals name="pegasis" value="13" literal="pegasis"/>
       <eLiterals name="teen" value="14" literal="teen"/>
       <eLiterals name="speed" value="15" literal="speed"/>
+      <eLiterals name="ctp" value="16"/>
+      <eLiterals name="dismentation" value="17"/>
+      <eLiterals name="activeMessage" value="18"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="InterNodeComm">
       <eLiterals name="BT" literal="BT"/>
@@ -67,26 +51,39 @@
       <eLiterals name="WLan" value="2" literal="WLan"/>
       <eLiterals name="RF" value="3" literal="RF"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="JobSchedule">
-      <eLiterals name="start"/>
-      <eLiterals name="stop" value="1"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="LogicalSymbol">
       <eLiterals name="equal"/>
       <eLiterals name="greaterThan" value="1"/>
       <eLiterals name="greaterOrEqualThan" value="2"/>
       <eLiterals name="lessThan" value="3"/>
       <eLiterals name="lessOrEqualThan" value="4"/>
-      <eLiterals name="not" value="5"/>
+      <eLiterals name="notEqual" value="5"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="Leds">
+      <eLiterals name="led0"/>
+      <eLiterals name="led1" value="1"/>
+      <eLiterals name="led2" value="2"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="LedStatus">
+      <eLiterals name="on"/>
+      <eLiterals name="off" value="1"/>
+      <eLiterals name="toggle" value="2"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="toplevelstructure" nsURI="http://www.nader.org/sennet/tls" nsPrefix="tls">
+    <eClassifiers xsi:type="ecore:EClass" name="Identifiable" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" eSuperTypes="#//toplevelstructure/Identifiable">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="node" nsURI="http://www.nader.org/sennet/nd" nsPrefix="nd">
     <eClassifiers xsi:type="ecore:EClass" name="AbstractNode" abstract="true" eSuperTypes="#//toplevelstructure/Identifiable">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="#//enums/Position"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
-          eType="#//port/AbstractPort"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" upperBound="-1"
-          eType="#//sensor/AbstractSensor"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="nodeResources" upperBound="-1"
+          eType="#//sensors/AbstractSensor" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AbstractFlatNode" abstract="true"
         eSuperTypes="#//node/AbstractNode"/>
@@ -97,82 +94,26 @@
     <eClassifiers xsi:type="ecore:EClass" name="SinkNode" eSuperTypes="#//node/AbstractNode"/>
     <eClassifiers xsi:type="ecore:EClass" name="ComputationNode" eSuperTypes="#//node/AbstractFlatNode"/>
   </eSubpackages>
-  <eSubpackages name="job" nsURI="http://www.nader.org/sennet/jb" nsPrefix="jb">
-    <eClassifiers xsi:type="ecore:EClass" name="AbstractJob" abstract="true" eSuperTypes="#//toplevelstructure/Identifiable">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//job/actions/AbstractJobAction"
-          containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ContinuousJob" eSuperTypes="#//job/AbstractJob"/>
-    <eClassifiers xsi:type="ecore:EClass" name="EventDrivenJob" eSuperTypes="#//job/AbstractJob">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="eventCondition" eType="#//LogicalCondition"
-          containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PeriodicJob" eSuperTypes="#//job/AbstractJob">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="timer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RequestReplayJob" eSuperTypes="#//job/AbstractJob"/>
-    <eSubpackages name="actions" nsURI="http://www.nader.org/sennet/jb/ac" nsPrefix="ac">
-      <eClassifiers xsi:type="ecore:EClass" name="AbstractJobAction" abstract="true">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="sinkNode" eType="#//node/SinkNode"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="AbstractCommonJobAction" abstract="true"
-          eSuperTypes="#//job/actions/AbstractJobAction">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="targetNode" eType="#//node/AbstractNode"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="AbstractNodeMemoryAction" abstract="true"
-          eSuperTypes="#//job/actions/AbstractCommonJobAction"/>
-      <eClassifiers xsi:type="ecore:EClass" name="AbstractMessageAction" abstract="true"
-          eSuperTypes="#//job/actions/AbstractCommonJobAction"/>
-      <eClassifiers xsi:type="ecore:EClass" name="SenseForwardAction" eSuperTypes="#//job/actions/AbstractCommonJobAction"/>
-      <eClassifiers xsi:type="ecore:EClass" name="AggregationAction" eSuperTypes="#//job/actions/AbstractCommonJobAction">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="aggregation" eType="#//enums/Aggregation"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="FusionAction" eSuperTypes="#//job/actions/AbstractJobAction">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="fusion" eType="#//enums/Fusion"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="compuNode" eType="#//node/ComputationNode"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="clusterHead" eType="#//node/ClusterHeadNode"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ReadNodeMemoryAction" eSuperTypes="#//job/actions/AbstractNodeMemoryAction"/>
-      <eClassifiers xsi:type="ecore:EClass" name="WriteNodeMemoryAction" eSuperTypes="#//job/actions/AbstractNodeMemoryAction"/>
-      <eClassifiers xsi:type="ecore:EClass" name="SendMessageAction" eSuperTypes="#//job/actions/AbstractMessageAction">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="outPort" eType="#//port/OutPort"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ReceiveMessageAction" eSuperTypes="#//job/actions/AbstractMessageAction">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="inPort" eType="#//port/InPort"/>
-      </eClassifiers>
-    </eSubpackages>
+  <eSubpackages name="sensors" nsURI="http://www.nader.org/sennet/sn" nsPrefix="sn">
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractSensor" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AccelerometerSensor" eSuperTypes="#//sensors/AbstractSensor"/>
+    <eClassifiers xsi:type="ecore:EClass" name="LightSensor" eSuperTypes="#//sensors/AbstractSensor"/>
+    <eClassifiers xsi:type="ecore:EClass" name="LocationSensor" eSuperTypes="#//sensors/AbstractSensor"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MicrophoneSensor" eSuperTypes="#//sensors/AbstractSensor"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TemperatureSensor" eSuperTypes="#//sensors/AbstractSensor"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PressureSensor" eSuperTypes="#//sensors/AbstractSensor"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HumiditySensor" eSuperTypes="#//sensors/AbstractSensor"/>
+    <eClassifiers xsi:type="ecore:EClass" name="VoltageSensor" eSuperTypes="#//sensors/AbstractSensor"/>
   </eSubpackages>
-  <eSubpackages name="sensor" nsURI="http://www.nader.org/sennet/sn" nsPrefix="sn">
-    <eClassifiers xsi:type="ecore:EClass" name="AbstractSensor" abstract="true" eSuperTypes="#//toplevelstructure/AbstractResource"/>
-    <eClassifiers xsi:type="ecore:EClass" name="AccelerometerSensor" eSuperTypes="#//sensor/AbstractSensor"/>
-    <eClassifiers xsi:type="ecore:EClass" name="LightSensor" eSuperTypes="#//sensor/AbstractSensor"/>
-    <eClassifiers xsi:type="ecore:EClass" name="LocationSensor" eSuperTypes="#//sensor/AbstractSensor"/>
-    <eClassifiers xsi:type="ecore:EClass" name="MicrophoneSensor" eSuperTypes="#//sensor/AbstractSensor"/>
-    <eClassifiers xsi:type="ecore:EClass" name="TemperatureSensor" eSuperTypes="#//sensor/AbstractSensor"/>
-    <eClassifiers xsi:type="ecore:EClass" name="PressureSensor" eSuperTypes="#//sensor/AbstractSensor"/>
-    <eClassifiers xsi:type="ecore:EClass" name="HumiditySensor" eSuperTypes="#//sensor/AbstractSensor"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ChemicalSensor" eSuperTypes="#//sensor/AbstractSensor"/>
-  </eSubpackages>
-  <eSubpackages name="port" nsURI="http://www.nader.org/sennet/pt" nsPrefix="pt">
-    <eClassifiers xsi:type="ecore:EClass" name="AbstractPort" abstract="true" eSuperTypes="#//toplevelstructure/AbstractResource"/>
-    <eClassifiers xsi:type="ecore:EClass" name="UsbPort" eSuperTypes="#//port/InPort #//port/OutPort"/>
-    <eClassifiers xsi:type="ecore:EClass" name="SerialPort" eSuperTypes="#//port/InPort #//port/OutPort"/>
-    <eClassifiers xsi:type="ecore:EClass" name="OutPort" eSuperTypes="#//port/AbstractPort"/>
-    <eClassifiers xsi:type="ecore:EClass" name="InPort" eSuperTypes="#//port/AbstractPort"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Transmitter" eSuperTypes="#//port/OutPort"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Reciever" eSuperTypes="#//port/InPort"/>
-  </eSubpackages>
-  <eSubpackages name="network" nsURI="http://www.nader.org/sennet/nt" nsPrefix="nt">
+  <eSubpackages name="network" nsURI="http://www.nader.org/sennet/net" nsPrefix="net">
     <eClassifiers xsi:type="ecore:EClass" name="AbstractNetwork" abstract="true" eSuperTypes="#//toplevelstructure/Identifiable">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbOfNodes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="interNodeComm" eType="#//enums/InterNodeComm"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="routingProtocol" eType="#//enums/RoutingProtocol"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sink" eType="#//node/SinkNode"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" upperBound="-1"
-          eType="#//sensor/AbstractSensor" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
-          eType="#//port/AbstractPort" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
+          eType="#//sensors/AbstractSensor" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sink" lowerBound="1"
+          eType="#//node/SinkNode" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FlatNetwork" eSuperTypes="#//network/AbstractNetwork">
       <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
@@ -183,12 +124,72 @@
           eType="#//network/Cluster" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Cluster" eSuperTypes="#//toplevelstructure/Identifiable">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="head" eType="#//node/ClusterHeadNode"
-          containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
           eType="#//node/AbstractClusterNode" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
-          eType="#//toplevelstructure/AbstractResource"/>
+          eType="#//sensors/AbstractSensor"/>
     </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="job" nsURI="http://www.nader.org/sennet/jb" nsPrefix="jb">
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractJob" abstract="true" eSuperTypes="#//toplevelstructure/Identifiable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="JobTargetNode" eType="#//node/AbstractNode"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="JobTargetNetwork" eType="#//network/AbstractNetwork"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="startEndTrigger" upperBound="-1"
+          eType="#//job/jobtrigger/AbstractStartEndingJobTrigger" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="jobaction" upperBound="-1"
+          eType="#//job/jobaction/AbstratAction" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SenseForwardJob" eSuperTypes="#//job/AbstractJob">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="sensingThreshold" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AggregationJob" eSuperTypes="#//job/AbstractJob">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aggregation" eType="#//enums/Aggregation"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FusionJob" eSuperTypes="#//job/AbstractJob">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="fusion" eType="#//enums/Fusion"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SenseNowJob" eSuperTypes="#//job/AbstractJob"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SinkJob" eSuperTypes="#//job/AbstractJob"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RegularSenseJob" eSuperTypes="#//job/AbstractJob">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="sensingThreshold" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eClassifiers>
+    <eSubpackages name="jobtrigger" nsURI="http://www.nader.org/sennet/jb/jt" nsPrefix="jt">
+      <eClassifiers xsi:type="ecore:EClass" name="ReceiveMessageTrigger" eSuperTypes="#//job/jobtrigger/AbstractRecieveTrigger"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RecieveSerialMsgTrigger" eSuperTypes="#//job/jobtrigger/AbstractRecieveTrigger"/>
+      <eClassifiers xsi:type="ecore:EClass" name="StartJobTrigger" eSuperTypes="#//job/jobtrigger/AbstractStartEndingJobTrigger"/>
+      <eClassifiers xsi:type="ecore:EClass" name="StopJobTrigger" eSuperTypes="#//job/jobtrigger/AbstractStartEndingJobTrigger"/>
+      <eClassifiers xsi:type="ecore:EClass" name="PushButtomTrigger" eSuperTypes="#//job/jobtrigger/AbstractRecieveTrigger"/>
+      <eClassifiers xsi:type="ecore:EClass" name="AbstractRecieveTrigger" abstract="true"
+          eSuperTypes="#//job/jobtrigger/StartJobTrigger #//job/jobtrigger/StopJobTrigger"/>
+      <eClassifiers xsi:type="ecore:EClass" name="AbstractStartEndingJobTrigger" abstract="true"/>
+    </eSubpackages>
+    <eSubpackages name="jobaction" nsURI="http://www.nader.org/sennet/jb/ja" nsPrefix="ja">
+      <eClassifiers xsi:type="ecore:EClass" name="AbstratAction" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
+            eType="#//job/jobaction/ConditionalAction" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ConditionalAction">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="sensorTerm" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="logicalSymbol" eType="#//enums/LogicalSymbol"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="AbstractNodeMemoryAction" abstract="true"
+          eSuperTypes="#//job/jobaction/AbstratAction"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ReadNodeMemoryAction" eSuperTypes="#//job/jobaction/AbstractNodeMemoryAction"/>
+      <eClassifiers xsi:type="ecore:EClass" name="WriteNodeMemoryAction" eSuperTypes="#//job/jobaction/AbstractNodeMemoryAction #//job/jobaction/AbstractResponceAction"/>
+      <eClassifiers xsi:type="ecore:EClass" name="SendMessageAction" eSuperTypes="#//job/jobaction/AbstractResponceAction">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="sendMessageTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="BlinkAction" eSuperTypes="#//job/jobaction/AbstractResponceAction">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="led" eType="#//enums/Leds"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//enums/LedStatus"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="AbstractResponceAction" abstract="true"
+          eSuperTypes="#//job/jobaction/AbstratAction"/>
+      <eClassifiers xsi:type="ecore:EClass" name="SendSerialPortMsgAction" eSuperTypes="#//job/jobaction/AbstractResponceAction"/>
+    </eSubpackages>
   </eSubpackages>
 </ecore:EPackage>

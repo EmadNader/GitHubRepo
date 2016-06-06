@@ -22,40 +22,58 @@ public interface JobFactory extends EFactory {
 	JobFactory eINSTANCE = org.nader.sennet.job.impl.JobFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Continuous Job</em>'.
+	 * Returns a new object of class '<em>Sense Forward Job</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Continuous Job</em>'.
+	 * @return a new object of class '<em>Sense Forward Job</em>'.
 	 * @generated
 	 */
-	ContinuousJob createContinuousJob();
+	SenseForwardJob createSenseForwardJob();
 
 	/**
-	 * Returns a new object of class '<em>Event Driven Job</em>'.
+	 * Returns a new object of class '<em>Aggregation Job</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Event Driven Job</em>'.
+	 * @return a new object of class '<em>Aggregation Job</em>'.
 	 * @generated
 	 */
-	EventDrivenJob createEventDrivenJob();
+	AggregationJob createAggregationJob();
 
 	/**
-	 * Returns a new object of class '<em>Periodic Job</em>'.
+	 * Returns a new object of class '<em>Fusion Job</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Periodic Job</em>'.
+	 * @return a new object of class '<em>Fusion Job</em>'.
 	 * @generated
 	 */
-	PeriodicJob createPeriodicJob();
+	FusionJob createFusionJob();
 
 	/**
-	 * Returns a new object of class '<em>Request Replay Job</em>'.
+	 * Returns a new object of class '<em>Sense Now Job</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Request Replay Job</em>'.
+	 * @return a new object of class '<em>Sense Now Job</em>'.
 	 * @generated
 	 */
-	RequestReplayJob createRequestReplayJob();
+	SenseNowJob createSenseNowJob();
+
+	/**
+	 * Returns a new object of class '<em>Sink Job</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Sink Job</em>'.
+	 * @generated
+	 */
+	SinkJob createSinkJob();
+
+	/**
+	 * Returns a new object of class '<em>Regular Sense Job</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Regular Sense Job</em>'.
+	 * @generated
+	 */
+	RegularSenseJob createRegularSenseJob();
 
 	/**
 	 * Returns the package supported by this factory.

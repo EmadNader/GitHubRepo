@@ -78,13 +78,40 @@ public interface JobPackage extends EPackage {
 	int ABSTRACT_JOB__ID = ToplevelstructurePackage.IDENTIFIABLE__ID;
 
 	/**
-	 * The feature id for the '<em><b>Action</b></em>' containment reference.
+	 * The feature id for the '<em><b>Job Target Node</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_JOB__ACTION = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 0;
+	int ABSTRACT_JOB__JOB_TARGET_NODE = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Job Target Network</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_JOB__JOB_TARGET_NETWORK = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Start End Trigger</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_JOB__START_END_TRIGGER = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Jobaction</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_JOB__JOBACTION = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Job</em>' class.
@@ -93,7 +120,7 @@ public interface JobPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_JOB_FEATURE_COUNT = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 1;
+	int ABSTRACT_JOB_FEATURE_COUNT = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Abstract Job</em>' class.
@@ -105,14 +132,14 @@ public interface JobPackage extends EPackage {
 	int ABSTRACT_JOB_OPERATION_COUNT = ToplevelstructurePackage.IDENTIFIABLE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nader.sennet.job.impl.ContinuousJobImpl <em>Continuous Job</em>}' class.
+	 * The meta object id for the '{@link org.nader.sennet.job.impl.SenseForwardJobImpl <em>Sense Forward Job</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.nader.sennet.job.impl.ContinuousJobImpl
-	 * @see org.nader.sennet.job.impl.JobPackageImpl#getContinuousJob()
+	 * @see org.nader.sennet.job.impl.SenseForwardJobImpl
+	 * @see org.nader.sennet.job.impl.JobPackageImpl#getSenseForwardJob()
 	 * @generated
 	 */
-	int CONTINUOUS_JOB = 1;
+	int SENSE_FORWARD_JOB = 1;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -121,44 +148,80 @@ public interface JobPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_JOB__ID = ABSTRACT_JOB__ID;
+	int SENSE_FORWARD_JOB__ID = ABSTRACT_JOB__ID;
 
 	/**
-	 * The feature id for the '<em><b>Action</b></em>' containment reference.
+	 * The feature id for the '<em><b>Job Target Node</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_JOB__ACTION = ABSTRACT_JOB__ACTION;
+	int SENSE_FORWARD_JOB__JOB_TARGET_NODE = ABSTRACT_JOB__JOB_TARGET_NODE;
 
 	/**
-	 * The number of structural features of the '<em>Continuous Job</em>' class.
+	 * The feature id for the '<em><b>Job Target Network</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_JOB_FEATURE_COUNT = ABSTRACT_JOB_FEATURE_COUNT + 0;
+	int SENSE_FORWARD_JOB__JOB_TARGET_NETWORK = ABSTRACT_JOB__JOB_TARGET_NETWORK;
 
 	/**
-	 * The number of operations of the '<em>Continuous Job</em>' class.
+	 * The feature id for the '<em><b>Start End Trigger</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_JOB_OPERATION_COUNT = ABSTRACT_JOB_OPERATION_COUNT + 0;
+	int SENSE_FORWARD_JOB__START_END_TRIGGER = ABSTRACT_JOB__START_END_TRIGGER;
 
 	/**
-	 * The meta object id for the '{@link org.nader.sennet.job.impl.EventDrivenJobImpl <em>Event Driven Job</em>}' class.
+	 * The feature id for the '<em><b>Jobaction</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.nader.sennet.job.impl.EventDrivenJobImpl
-	 * @see org.nader.sennet.job.impl.JobPackageImpl#getEventDrivenJob()
+	 * @generated
+	 * @ordered
+	 */
+	int SENSE_FORWARD_JOB__JOBACTION = ABSTRACT_JOB__JOBACTION;
+
+	/**
+	 * The feature id for the '<em><b>Sensing Threshold</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSE_FORWARD_JOB__SENSING_THRESHOLD = ABSTRACT_JOB_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Sense Forward Job</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSE_FORWARD_JOB_FEATURE_COUNT = ABSTRACT_JOB_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Sense Forward Job</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSE_FORWARD_JOB_OPERATION_COUNT = ABSTRACT_JOB_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nader.sennet.job.impl.AggregationJobImpl <em>Aggregation Job</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nader.sennet.job.impl.AggregationJobImpl
+	 * @see org.nader.sennet.job.impl.JobPackageImpl#getAggregationJob()
 	 * @generated
 	 */
-	int EVENT_DRIVEN_JOB = 2;
+	int AGGREGATION_JOB = 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -167,53 +230,80 @@ public interface JobPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_DRIVEN_JOB__ID = ABSTRACT_JOB__ID;
+	int AGGREGATION_JOB__ID = ABSTRACT_JOB__ID;
 
 	/**
-	 * The feature id for the '<em><b>Action</b></em>' containment reference.
+	 * The feature id for the '<em><b>Job Target Node</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_DRIVEN_JOB__ACTION = ABSTRACT_JOB__ACTION;
+	int AGGREGATION_JOB__JOB_TARGET_NODE = ABSTRACT_JOB__JOB_TARGET_NODE;
 
 	/**
-	 * The feature id for the '<em><b>Event Condition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Job Target Network</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_DRIVEN_JOB__EVENT_CONDITION = ABSTRACT_JOB_FEATURE_COUNT + 0;
+	int AGGREGATION_JOB__JOB_TARGET_NETWORK = ABSTRACT_JOB__JOB_TARGET_NETWORK;
 
 	/**
-	 * The number of structural features of the '<em>Event Driven Job</em>' class.
+	 * The feature id for the '<em><b>Start End Trigger</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_DRIVEN_JOB_FEATURE_COUNT = ABSTRACT_JOB_FEATURE_COUNT + 1;
+	int AGGREGATION_JOB__START_END_TRIGGER = ABSTRACT_JOB__START_END_TRIGGER;
 
 	/**
-	 * The number of operations of the '<em>Event Driven Job</em>' class.
+	 * The feature id for the '<em><b>Jobaction</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_DRIVEN_JOB_OPERATION_COUNT = ABSTRACT_JOB_OPERATION_COUNT + 0;
+	int AGGREGATION_JOB__JOBACTION = ABSTRACT_JOB__JOBACTION;
 
 	/**
-	 * The meta object id for the '{@link org.nader.sennet.job.impl.PeriodicJobImpl <em>Periodic Job</em>}' class.
+	 * The feature id for the '<em><b>Aggregation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.nader.sennet.job.impl.PeriodicJobImpl
-	 * @see org.nader.sennet.job.impl.JobPackageImpl#getPeriodicJob()
+	 * @generated
+	 * @ordered
+	 */
+	int AGGREGATION_JOB__AGGREGATION = ABSTRACT_JOB_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Aggregation Job</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGGREGATION_JOB_FEATURE_COUNT = ABSTRACT_JOB_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Aggregation Job</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGGREGATION_JOB_OPERATION_COUNT = ABSTRACT_JOB_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nader.sennet.job.impl.FusionJobImpl <em>Fusion Job</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nader.sennet.job.impl.FusionJobImpl
+	 * @see org.nader.sennet.job.impl.JobPackageImpl#getFusionJob()
 	 * @generated
 	 */
-	int PERIODIC_JOB = 3;
+	int FUSION_JOB = 3;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -222,53 +312,80 @@ public interface JobPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERIODIC_JOB__ID = ABSTRACT_JOB__ID;
+	int FUSION_JOB__ID = ABSTRACT_JOB__ID;
 
 	/**
-	 * The feature id for the '<em><b>Action</b></em>' containment reference.
+	 * The feature id for the '<em><b>Job Target Node</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERIODIC_JOB__ACTION = ABSTRACT_JOB__ACTION;
+	int FUSION_JOB__JOB_TARGET_NODE = ABSTRACT_JOB__JOB_TARGET_NODE;
 
 	/**
-	 * The feature id for the '<em><b>Timer</b></em>' attribute.
+	 * The feature id for the '<em><b>Job Target Network</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERIODIC_JOB__TIMER = ABSTRACT_JOB_FEATURE_COUNT + 0;
+	int FUSION_JOB__JOB_TARGET_NETWORK = ABSTRACT_JOB__JOB_TARGET_NETWORK;
 
 	/**
-	 * The number of structural features of the '<em>Periodic Job</em>' class.
+	 * The feature id for the '<em><b>Start End Trigger</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERIODIC_JOB_FEATURE_COUNT = ABSTRACT_JOB_FEATURE_COUNT + 1;
+	int FUSION_JOB__START_END_TRIGGER = ABSTRACT_JOB__START_END_TRIGGER;
 
 	/**
-	 * The number of operations of the '<em>Periodic Job</em>' class.
+	 * The feature id for the '<em><b>Jobaction</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERIODIC_JOB_OPERATION_COUNT = ABSTRACT_JOB_OPERATION_COUNT + 0;
+	int FUSION_JOB__JOBACTION = ABSTRACT_JOB__JOBACTION;
 
 	/**
-	 * The meta object id for the '{@link org.nader.sennet.job.impl.RequestReplayJobImpl <em>Request Replay Job</em>}' class.
+	 * The feature id for the '<em><b>Fusion</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.nader.sennet.job.impl.RequestReplayJobImpl
-	 * @see org.nader.sennet.job.impl.JobPackageImpl#getRequestReplayJob()
+	 * @generated
+	 * @ordered
+	 */
+	int FUSION_JOB__FUSION = ABSTRACT_JOB_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Fusion Job</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUSION_JOB_FEATURE_COUNT = ABSTRACT_JOB_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Fusion Job</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUSION_JOB_OPERATION_COUNT = ABSTRACT_JOB_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nader.sennet.job.impl.SenseNowJobImpl <em>Sense Now Job</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nader.sennet.job.impl.SenseNowJobImpl
+	 * @see org.nader.sennet.job.impl.JobPackageImpl#getSenseNowJob()
 	 * @generated
 	 */
-	int REQUEST_REPLAY_JOB = 4;
+	int SENSE_NOW_JOB = 4;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -277,34 +394,216 @@ public interface JobPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST_REPLAY_JOB__ID = ABSTRACT_JOB__ID;
+	int SENSE_NOW_JOB__ID = ABSTRACT_JOB__ID;
 
 	/**
-	 * The feature id for the '<em><b>Action</b></em>' containment reference.
+	 * The feature id for the '<em><b>Job Target Node</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST_REPLAY_JOB__ACTION = ABSTRACT_JOB__ACTION;
+	int SENSE_NOW_JOB__JOB_TARGET_NODE = ABSTRACT_JOB__JOB_TARGET_NODE;
 
 	/**
-	 * The number of structural features of the '<em>Request Replay Job</em>' class.
+	 * The feature id for the '<em><b>Job Target Network</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST_REPLAY_JOB_FEATURE_COUNT = ABSTRACT_JOB_FEATURE_COUNT + 0;
+	int SENSE_NOW_JOB__JOB_TARGET_NETWORK = ABSTRACT_JOB__JOB_TARGET_NETWORK;
 
 	/**
-	 * The number of operations of the '<em>Request Replay Job</em>' class.
+	 * The feature id for the '<em><b>Start End Trigger</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST_REPLAY_JOB_OPERATION_COUNT = ABSTRACT_JOB_OPERATION_COUNT + 0;
+	int SENSE_NOW_JOB__START_END_TRIGGER = ABSTRACT_JOB__START_END_TRIGGER;
+
+	/**
+	 * The feature id for the '<em><b>Jobaction</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSE_NOW_JOB__JOBACTION = ABSTRACT_JOB__JOBACTION;
+
+	/**
+	 * The number of structural features of the '<em>Sense Now Job</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSE_NOW_JOB_FEATURE_COUNT = ABSTRACT_JOB_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Sense Now Job</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSE_NOW_JOB_OPERATION_COUNT = ABSTRACT_JOB_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nader.sennet.job.impl.SinkJobImpl <em>Sink Job</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nader.sennet.job.impl.SinkJobImpl
+	 * @see org.nader.sennet.job.impl.JobPackageImpl#getSinkJob()
+	 * @generated
+	 */
+	int SINK_JOB = 5;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINK_JOB__ID = ABSTRACT_JOB__ID;
+
+	/**
+	 * The feature id for the '<em><b>Job Target Node</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINK_JOB__JOB_TARGET_NODE = ABSTRACT_JOB__JOB_TARGET_NODE;
+
+	/**
+	 * The feature id for the '<em><b>Job Target Network</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINK_JOB__JOB_TARGET_NETWORK = ABSTRACT_JOB__JOB_TARGET_NETWORK;
+
+	/**
+	 * The feature id for the '<em><b>Start End Trigger</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINK_JOB__START_END_TRIGGER = ABSTRACT_JOB__START_END_TRIGGER;
+
+	/**
+	 * The feature id for the '<em><b>Jobaction</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINK_JOB__JOBACTION = ABSTRACT_JOB__JOBACTION;
+
+	/**
+	 * The number of structural features of the '<em>Sink Job</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINK_JOB_FEATURE_COUNT = ABSTRACT_JOB_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Sink Job</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINK_JOB_OPERATION_COUNT = ABSTRACT_JOB_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nader.sennet.job.impl.RegularSenseJobImpl <em>Regular Sense Job</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nader.sennet.job.impl.RegularSenseJobImpl
+	 * @see org.nader.sennet.job.impl.JobPackageImpl#getRegularSenseJob()
+	 * @generated
+	 */
+	int REGULAR_SENSE_JOB = 6;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGULAR_SENSE_JOB__ID = ABSTRACT_JOB__ID;
+
+	/**
+	 * The feature id for the '<em><b>Job Target Node</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGULAR_SENSE_JOB__JOB_TARGET_NODE = ABSTRACT_JOB__JOB_TARGET_NODE;
+
+	/**
+	 * The feature id for the '<em><b>Job Target Network</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGULAR_SENSE_JOB__JOB_TARGET_NETWORK = ABSTRACT_JOB__JOB_TARGET_NETWORK;
+
+	/**
+	 * The feature id for the '<em><b>Start End Trigger</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGULAR_SENSE_JOB__START_END_TRIGGER = ABSTRACT_JOB__START_END_TRIGGER;
+
+	/**
+	 * The feature id for the '<em><b>Jobaction</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGULAR_SENSE_JOB__JOBACTION = ABSTRACT_JOB__JOBACTION;
+
+	/**
+	 * The feature id for the '<em><b>Sensing Threshold</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGULAR_SENSE_JOB__SENSING_THRESHOLD = ABSTRACT_JOB_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Regular Sense Job</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGULAR_SENSE_JOB_FEATURE_COUNT = ABSTRACT_JOB_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Regular Sense Job</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGULAR_SENSE_JOB_OPERATION_COUNT = ABSTRACT_JOB_OPERATION_COUNT + 0;
 
 
 	/**
@@ -318,77 +617,152 @@ public interface JobPackage extends EPackage {
 	EClass getAbstractJob();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.nader.sennet.job.AbstractJob#getAction <em>Action</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.nader.sennet.job.AbstractJob#getJobTargetNode <em>Job Target Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Action</em>'.
-	 * @see org.nader.sennet.job.AbstractJob#getAction()
+	 * @return the meta object for the containment reference '<em>Job Target Node</em>'.
+	 * @see org.nader.sennet.job.AbstractJob#getJobTargetNode()
 	 * @see #getAbstractJob()
 	 * @generated
 	 */
-	EReference getAbstractJob_Action();
+	EReference getAbstractJob_JobTargetNode();
 
 	/**
-	 * Returns the meta object for class '{@link org.nader.sennet.job.ContinuousJob <em>Continuous Job</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.nader.sennet.job.AbstractJob#getJobTargetNetwork <em>Job Target Network</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Continuous Job</em>'.
-	 * @see org.nader.sennet.job.ContinuousJob
+	 * @return the meta object for the containment reference '<em>Job Target Network</em>'.
+	 * @see org.nader.sennet.job.AbstractJob#getJobTargetNetwork()
+	 * @see #getAbstractJob()
 	 * @generated
 	 */
-	EClass getContinuousJob();
+	EReference getAbstractJob_JobTargetNetwork();
 
 	/**
-	 * Returns the meta object for class '{@link org.nader.sennet.job.EventDrivenJob <em>Event Driven Job</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.nader.sennet.job.AbstractJob#getStartEndTrigger <em>Start End Trigger</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Event Driven Job</em>'.
-	 * @see org.nader.sennet.job.EventDrivenJob
+	 * @return the meta object for the containment reference list '<em>Start End Trigger</em>'.
+	 * @see org.nader.sennet.job.AbstractJob#getStartEndTrigger()
+	 * @see #getAbstractJob()
 	 * @generated
 	 */
-	EClass getEventDrivenJob();
+	EReference getAbstractJob_StartEndTrigger();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.nader.sennet.job.EventDrivenJob#getEventCondition <em>Event Condition</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.nader.sennet.job.AbstractJob#getJobaction <em>Jobaction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Event Condition</em>'.
-	 * @see org.nader.sennet.job.EventDrivenJob#getEventCondition()
-	 * @see #getEventDrivenJob()
+	 * @return the meta object for the containment reference list '<em>Jobaction</em>'.
+	 * @see org.nader.sennet.job.AbstractJob#getJobaction()
+	 * @see #getAbstractJob()
 	 * @generated
 	 */
-	EReference getEventDrivenJob_EventCondition();
+	EReference getAbstractJob_Jobaction();
 
 	/**
-	 * Returns the meta object for class '{@link org.nader.sennet.job.PeriodicJob <em>Periodic Job</em>}'.
+	 * Returns the meta object for class '{@link org.nader.sennet.job.SenseForwardJob <em>Sense Forward Job</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Periodic Job</em>'.
-	 * @see org.nader.sennet.job.PeriodicJob
+	 * @return the meta object for class '<em>Sense Forward Job</em>'.
+	 * @see org.nader.sennet.job.SenseForwardJob
 	 * @generated
 	 */
-	EClass getPeriodicJob();
+	EClass getSenseForwardJob();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.nader.sennet.job.PeriodicJob#getTimer <em>Timer</em>}'.
+	 * Returns the meta object for the attribute '{@link org.nader.sennet.job.SenseForwardJob#getSensingThreshold <em>Sensing Threshold</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Timer</em>'.
-	 * @see org.nader.sennet.job.PeriodicJob#getTimer()
-	 * @see #getPeriodicJob()
+	 * @return the meta object for the attribute '<em>Sensing Threshold</em>'.
+	 * @see org.nader.sennet.job.SenseForwardJob#getSensingThreshold()
+	 * @see #getSenseForwardJob()
 	 * @generated
 	 */
-	EAttribute getPeriodicJob_Timer();
+	EAttribute getSenseForwardJob_SensingThreshold();
 
 	/**
-	 * Returns the meta object for class '{@link org.nader.sennet.job.RequestReplayJob <em>Request Replay Job</em>}'.
+	 * Returns the meta object for class '{@link org.nader.sennet.job.AggregationJob <em>Aggregation Job</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Request Replay Job</em>'.
-	 * @see org.nader.sennet.job.RequestReplayJob
+	 * @return the meta object for class '<em>Aggregation Job</em>'.
+	 * @see org.nader.sennet.job.AggregationJob
 	 * @generated
 	 */
-	EClass getRequestReplayJob();
+	EClass getAggregationJob();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nader.sennet.job.AggregationJob#getAggregation <em>Aggregation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Aggregation</em>'.
+	 * @see org.nader.sennet.job.AggregationJob#getAggregation()
+	 * @see #getAggregationJob()
+	 * @generated
+	 */
+	EAttribute getAggregationJob_Aggregation();
+
+	/**
+	 * Returns the meta object for class '{@link org.nader.sennet.job.FusionJob <em>Fusion Job</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fusion Job</em>'.
+	 * @see org.nader.sennet.job.FusionJob
+	 * @generated
+	 */
+	EClass getFusionJob();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nader.sennet.job.FusionJob#getFusion <em>Fusion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Fusion</em>'.
+	 * @see org.nader.sennet.job.FusionJob#getFusion()
+	 * @see #getFusionJob()
+	 * @generated
+	 */
+	EAttribute getFusionJob_Fusion();
+
+	/**
+	 * Returns the meta object for class '{@link org.nader.sennet.job.SenseNowJob <em>Sense Now Job</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Sense Now Job</em>'.
+	 * @see org.nader.sennet.job.SenseNowJob
+	 * @generated
+	 */
+	EClass getSenseNowJob();
+
+	/**
+	 * Returns the meta object for class '{@link org.nader.sennet.job.SinkJob <em>Sink Job</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Sink Job</em>'.
+	 * @see org.nader.sennet.job.SinkJob
+	 * @generated
+	 */
+	EClass getSinkJob();
+
+	/**
+	 * Returns the meta object for class '{@link org.nader.sennet.job.RegularSenseJob <em>Regular Sense Job</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Regular Sense Job</em>'.
+	 * @see org.nader.sennet.job.RegularSenseJob
+	 * @generated
+	 */
+	EClass getRegularSenseJob();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nader.sennet.job.RegularSenseJob#getSensingThreshold <em>Sensing Threshold</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sensing Threshold</em>'.
+	 * @see org.nader.sennet.job.RegularSenseJob#getSensingThreshold()
+	 * @see #getRegularSenseJob()
+	 * @generated
+	 */
+	EAttribute getRegularSenseJob_SensingThreshold();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -424,68 +798,128 @@ public interface JobPackage extends EPackage {
 		EClass ABSTRACT_JOB = eINSTANCE.getAbstractJob();
 
 		/**
-		 * The meta object literal for the '<em><b>Action</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Job Target Node</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_JOB__ACTION = eINSTANCE.getAbstractJob_Action();
+		EReference ABSTRACT_JOB__JOB_TARGET_NODE = eINSTANCE.getAbstractJob_JobTargetNode();
 
 		/**
-		 * The meta object literal for the '{@link org.nader.sennet.job.impl.ContinuousJobImpl <em>Continuous Job</em>}' class.
+		 * The meta object literal for the '<em><b>Job Target Network</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.nader.sennet.job.impl.ContinuousJobImpl
-		 * @see org.nader.sennet.job.impl.JobPackageImpl#getContinuousJob()
 		 * @generated
 		 */
-		EClass CONTINUOUS_JOB = eINSTANCE.getContinuousJob();
+		EReference ABSTRACT_JOB__JOB_TARGET_NETWORK = eINSTANCE.getAbstractJob_JobTargetNetwork();
 
 		/**
-		 * The meta object literal for the '{@link org.nader.sennet.job.impl.EventDrivenJobImpl <em>Event Driven Job</em>}' class.
+		 * The meta object literal for the '<em><b>Start End Trigger</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.nader.sennet.job.impl.EventDrivenJobImpl
-		 * @see org.nader.sennet.job.impl.JobPackageImpl#getEventDrivenJob()
 		 * @generated
 		 */
-		EClass EVENT_DRIVEN_JOB = eINSTANCE.getEventDrivenJob();
+		EReference ABSTRACT_JOB__START_END_TRIGGER = eINSTANCE.getAbstractJob_StartEndTrigger();
 
 		/**
-		 * The meta object literal for the '<em><b>Event Condition</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Jobaction</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EVENT_DRIVEN_JOB__EVENT_CONDITION = eINSTANCE.getEventDrivenJob_EventCondition();
+		EReference ABSTRACT_JOB__JOBACTION = eINSTANCE.getAbstractJob_Jobaction();
 
 		/**
-		 * The meta object literal for the '{@link org.nader.sennet.job.impl.PeriodicJobImpl <em>Periodic Job</em>}' class.
+		 * The meta object literal for the '{@link org.nader.sennet.job.impl.SenseForwardJobImpl <em>Sense Forward Job</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.nader.sennet.job.impl.PeriodicJobImpl
-		 * @see org.nader.sennet.job.impl.JobPackageImpl#getPeriodicJob()
+		 * @see org.nader.sennet.job.impl.SenseForwardJobImpl
+		 * @see org.nader.sennet.job.impl.JobPackageImpl#getSenseForwardJob()
 		 * @generated
 		 */
-		EClass PERIODIC_JOB = eINSTANCE.getPeriodicJob();
+		EClass SENSE_FORWARD_JOB = eINSTANCE.getSenseForwardJob();
 
 		/**
-		 * The meta object literal for the '<em><b>Timer</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Sensing Threshold</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PERIODIC_JOB__TIMER = eINSTANCE.getPeriodicJob_Timer();
+		EAttribute SENSE_FORWARD_JOB__SENSING_THRESHOLD = eINSTANCE.getSenseForwardJob_SensingThreshold();
 
 		/**
-		 * The meta object literal for the '{@link org.nader.sennet.job.impl.RequestReplayJobImpl <em>Request Replay Job</em>}' class.
+		 * The meta object literal for the '{@link org.nader.sennet.job.impl.AggregationJobImpl <em>Aggregation Job</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.nader.sennet.job.impl.RequestReplayJobImpl
-		 * @see org.nader.sennet.job.impl.JobPackageImpl#getRequestReplayJob()
+		 * @see org.nader.sennet.job.impl.AggregationJobImpl
+		 * @see org.nader.sennet.job.impl.JobPackageImpl#getAggregationJob()
 		 * @generated
 		 */
-		EClass REQUEST_REPLAY_JOB = eINSTANCE.getRequestReplayJob();
+		EClass AGGREGATION_JOB = eINSTANCE.getAggregationJob();
+
+		/**
+		 * The meta object literal for the '<em><b>Aggregation</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AGGREGATION_JOB__AGGREGATION = eINSTANCE.getAggregationJob_Aggregation();
+
+		/**
+		 * The meta object literal for the '{@link org.nader.sennet.job.impl.FusionJobImpl <em>Fusion Job</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nader.sennet.job.impl.FusionJobImpl
+		 * @see org.nader.sennet.job.impl.JobPackageImpl#getFusionJob()
+		 * @generated
+		 */
+		EClass FUSION_JOB = eINSTANCE.getFusionJob();
+
+		/**
+		 * The meta object literal for the '<em><b>Fusion</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FUSION_JOB__FUSION = eINSTANCE.getFusionJob_Fusion();
+
+		/**
+		 * The meta object literal for the '{@link org.nader.sennet.job.impl.SenseNowJobImpl <em>Sense Now Job</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nader.sennet.job.impl.SenseNowJobImpl
+		 * @see org.nader.sennet.job.impl.JobPackageImpl#getSenseNowJob()
+		 * @generated
+		 */
+		EClass SENSE_NOW_JOB = eINSTANCE.getSenseNowJob();
+
+		/**
+		 * The meta object literal for the '{@link org.nader.sennet.job.impl.SinkJobImpl <em>Sink Job</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nader.sennet.job.impl.SinkJobImpl
+		 * @see org.nader.sennet.job.impl.JobPackageImpl#getSinkJob()
+		 * @generated
+		 */
+		EClass SINK_JOB = eINSTANCE.getSinkJob();
+
+		/**
+		 * The meta object literal for the '{@link org.nader.sennet.job.impl.RegularSenseJobImpl <em>Regular Sense Job</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nader.sennet.job.impl.RegularSenseJobImpl
+		 * @see org.nader.sennet.job.impl.JobPackageImpl#getRegularSenseJob()
+		 * @generated
+		 */
+		EClass REGULAR_SENSE_JOB = eINSTANCE.getRegularSenseJob();
+
+		/**
+		 * The meta object literal for the '<em><b>Sensing Threshold</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REGULAR_SENSE_JOB__SENSING_THRESHOLD = eINSTANCE.getRegularSenseJob_SensingThreshold();
 
 	}
 

@@ -105,16 +105,6 @@ public interface EnumsPackage extends EPackage {
 	int INTER_NODE_COMM = 4;
 
 	/**
-	 * The meta object id for the '{@link org.nader.sennet.enums.JobSchedule <em>Job Schedule</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nader.sennet.enums.JobSchedule
-	 * @see org.nader.sennet.enums.impl.EnumsPackageImpl#getJobSchedule()
-	 * @generated
-	 */
-	int JOB_SCHEDULE = 5;
-
-	/**
 	 * The meta object id for the '{@link org.nader.sennet.enums.LogicalSymbol <em>Logical Symbol</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -122,7 +112,27 @@ public interface EnumsPackage extends EPackage {
 	 * @see org.nader.sennet.enums.impl.EnumsPackageImpl#getLogicalSymbol()
 	 * @generated
 	 */
-	int LOGICAL_SYMBOL = 6;
+	int LOGICAL_SYMBOL = 5;
+
+	/**
+	 * The meta object id for the '{@link org.nader.sennet.enums.Leds <em>Leds</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nader.sennet.enums.Leds
+	 * @see org.nader.sennet.enums.impl.EnumsPackageImpl#getLeds()
+	 * @generated
+	 */
+	int LEDS = 6;
+
+	/**
+	 * The meta object id for the '{@link org.nader.sennet.enums.LedStatus <em>Led Status</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nader.sennet.enums.LedStatus
+	 * @see org.nader.sennet.enums.impl.EnumsPackageImpl#getLedStatus()
+	 * @generated
+	 */
+	int LED_STATUS = 7;
 
 
 	/**
@@ -176,16 +186,6 @@ public interface EnumsPackage extends EPackage {
 	EEnum getInterNodeComm();
 
 	/**
-	 * Returns the meta object for enum '{@link org.nader.sennet.enums.JobSchedule <em>Job Schedule</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Job Schedule</em>'.
-	 * @see org.nader.sennet.enums.JobSchedule
-	 * @generated
-	 */
-	EEnum getJobSchedule();
-
-	/**
 	 * Returns the meta object for enum '{@link org.nader.sennet.enums.LogicalSymbol <em>Logical Symbol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -194,6 +194,26 @@ public interface EnumsPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getLogicalSymbol();
+
+	/**
+	 * Returns the meta object for enum '{@link org.nader.sennet.enums.Leds <em>Leds</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Leds</em>'.
+	 * @see org.nader.sennet.enums.Leds
+	 * @generated
+	 */
+	EEnum getLeds();
+
+	/**
+	 * Returns the meta object for enum '{@link org.nader.sennet.enums.LedStatus <em>Led Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Led Status</em>'.
+	 * @see org.nader.sennet.enums.LedStatus
+	 * @generated
+	 */
+	EEnum getLedStatus();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -269,16 +289,6 @@ public interface EnumsPackage extends EPackage {
 		EEnum INTER_NODE_COMM = eINSTANCE.getInterNodeComm();
 
 		/**
-		 * The meta object literal for the '{@link org.nader.sennet.enums.JobSchedule <em>Job Schedule</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.nader.sennet.enums.JobSchedule
-		 * @see org.nader.sennet.enums.impl.EnumsPackageImpl#getJobSchedule()
-		 * @generated
-		 */
-		EEnum JOB_SCHEDULE = eINSTANCE.getJobSchedule();
-
-		/**
 		 * The meta object literal for the '{@link org.nader.sennet.enums.LogicalSymbol <em>Logical Symbol</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -287,6 +297,26 @@ public interface EnumsPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum LOGICAL_SYMBOL = eINSTANCE.getLogicalSymbol();
+
+		/**
+		 * The meta object literal for the '{@link org.nader.sennet.enums.Leds <em>Leds</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nader.sennet.enums.Leds
+		 * @see org.nader.sennet.enums.impl.EnumsPackageImpl#getLeds()
+		 * @generated
+		 */
+		EEnum LEDS = eINSTANCE.getLeds();
+
+		/**
+		 * The meta object literal for the '{@link org.nader.sennet.enums.LedStatus <em>Led Status</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nader.sennet.enums.LedStatus
+		 * @see org.nader.sennet.enums.impl.EnumsPackageImpl#getLedStatus()
+		 * @generated
+		 */
+		EEnum LED_STATUS = eINSTANCE.getLedStatus();
 
 	}
 

@@ -5,21 +5,24 @@ package org.nader.sennet.node.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.nader.sennet.enums.Position;
 
 import org.nader.sennet.node.AbstractNode;
 import org.nader.sennet.node.NodePackage;
 
-import org.nader.sennet.toplevelstructure.AbstractResource;
+import org.nader.sennet.sensors.AbstractSensor;
 
 import org.nader.sennet.toplevelstructure.impl.IdentifiableImpl;
 
@@ -31,7 +34,7 @@ import org.nader.sennet.toplevelstructure.impl.IdentifiableImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.nader.sennet.node.impl.AbstractNodeImpl#getPosition <em>Position</em>}</li>
- *   <li>{@link org.nader.sennet.node.impl.AbstractNodeImpl#getResources <em>Resources</em>}</li>
+ *   <li>{@link org.nader.sennet.node.impl.AbstractNodeImpl#getNodeResources <em>Node Resources</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,14 +62,14 @@ public abstract class AbstractNodeImpl extends IdentifiableImpl implements Abstr
 	protected Position position = POSITION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getResources() <em>Resources</em>}' reference list.
+	 * The cached value of the '{@link #getNodeResources() <em>Node Resources</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getResources()
+	 * @see #getNodeResources()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AbstractResource> resources;
+	protected EList<AbstractSensor> nodeResources;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,11 +116,25 @@ public abstract class AbstractNodeImpl extends IdentifiableImpl implements Abstr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AbstractResource> getResources() {
-		if (resources == null) {
-			resources = new EObjectResolvingEList<AbstractResource>(AbstractResource.class, this, NodePackage.ABSTRACT_NODE__RESOURCES);
+	public EList<AbstractSensor> getNodeResources() {
+		if (nodeResources == null) {
+			nodeResources = new EObjectContainmentEList<AbstractSensor>(AbstractSensor.class, this, NodePackage.ABSTRACT_NODE__NODE_RESOURCES);
 		}
-		return resources;
+		return nodeResources;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case NodePackage.ABSTRACT_NODE__NODE_RESOURCES:
+				return ((InternalEList<?>)getNodeResources()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -130,8 +147,8 @@ public abstract class AbstractNodeImpl extends IdentifiableImpl implements Abstr
 		switch (featureID) {
 			case NodePackage.ABSTRACT_NODE__POSITION:
 				return getPosition();
-			case NodePackage.ABSTRACT_NODE__RESOURCES:
-				return getResources();
+			case NodePackage.ABSTRACT_NODE__NODE_RESOURCES:
+				return getNodeResources();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -148,9 +165,9 @@ public abstract class AbstractNodeImpl extends IdentifiableImpl implements Abstr
 			case NodePackage.ABSTRACT_NODE__POSITION:
 				setPosition((Position)newValue);
 				return;
-			case NodePackage.ABSTRACT_NODE__RESOURCES:
-				getResources().clear();
-				getResources().addAll((Collection<? extends AbstractResource>)newValue);
+			case NodePackage.ABSTRACT_NODE__NODE_RESOURCES:
+				getNodeResources().clear();
+				getNodeResources().addAll((Collection<? extends AbstractSensor>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -167,8 +184,8 @@ public abstract class AbstractNodeImpl extends IdentifiableImpl implements Abstr
 			case NodePackage.ABSTRACT_NODE__POSITION:
 				setPosition(POSITION_EDEFAULT);
 				return;
-			case NodePackage.ABSTRACT_NODE__RESOURCES:
-				getResources().clear();
+			case NodePackage.ABSTRACT_NODE__NODE_RESOURCES:
+				getNodeResources().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -184,8 +201,8 @@ public abstract class AbstractNodeImpl extends IdentifiableImpl implements Abstr
 		switch (featureID) {
 			case NodePackage.ABSTRACT_NODE__POSITION:
 				return position != POSITION_EDEFAULT;
-			case NodePackage.ABSTRACT_NODE__RESOURCES:
-				return resources != null && !resources.isEmpty();
+			case NodePackage.ABSTRACT_NODE__NODE_RESOURCES:
+				return nodeResources != null && !nodeResources.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -22,22 +22,13 @@ public interface SennetFactory extends EFactory {
 	SennetFactory eINSTANCE = org.nader.sennet.impl.SennetFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>WS Napp</em>'.
+	 * Returns a new object of class '<em>Se Net App</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>WS Napp</em>'.
+	 * @return a new object of class '<em>Se Net App</em>'.
 	 * @generated
 	 */
-	WSNapp createWSNapp();
-
-	/**
-	 * Returns a new object of class '<em>Logical Condition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Logical Condition</em>'.
-	 * @generated
-	 */
-	LogicalCondition createLogicalCondition();
+	SeNetApp createSeNetApp();
 
 	/**
 	 * Returns the package supported by this factory.

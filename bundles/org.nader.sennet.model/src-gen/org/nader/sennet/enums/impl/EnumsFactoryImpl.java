@@ -80,10 +80,12 @@ public class EnumsFactoryImpl extends EFactoryImpl implements EnumsFactory {
 				return createRoutingProtocolFromString(eDataType, initialValue);
 			case EnumsPackage.INTER_NODE_COMM:
 				return createInterNodeCommFromString(eDataType, initialValue);
-			case EnumsPackage.JOB_SCHEDULE:
-				return createJobScheduleFromString(eDataType, initialValue);
 			case EnumsPackage.LOGICAL_SYMBOL:
 				return createLogicalSymbolFromString(eDataType, initialValue);
+			case EnumsPackage.LEDS:
+				return createLedsFromString(eDataType, initialValue);
+			case EnumsPackage.LED_STATUS:
+				return createLedStatusFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -107,10 +109,12 @@ public class EnumsFactoryImpl extends EFactoryImpl implements EnumsFactory {
 				return convertRoutingProtocolToString(eDataType, instanceValue);
 			case EnumsPackage.INTER_NODE_COMM:
 				return convertInterNodeCommToString(eDataType, instanceValue);
-			case EnumsPackage.JOB_SCHEDULE:
-				return convertJobScheduleToString(eDataType, instanceValue);
 			case EnumsPackage.LOGICAL_SYMBOL:
 				return convertLogicalSymbolToString(eDataType, instanceValue);
+			case EnumsPackage.LEDS:
+				return convertLedsToString(eDataType, instanceValue);
+			case EnumsPackage.LED_STATUS:
+				return convertLedStatusToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -221,26 +225,6 @@ public class EnumsFactoryImpl extends EFactoryImpl implements EnumsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public JobSchedule createJobScheduleFromString(EDataType eDataType, String initialValue) {
-		JobSchedule result = JobSchedule.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertJobScheduleToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public LogicalSymbol createLogicalSymbolFromString(EDataType eDataType, String initialValue) {
 		LogicalSymbol result = LogicalSymbol.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -253,6 +237,46 @@ public class EnumsFactoryImpl extends EFactoryImpl implements EnumsFactory {
 	 * @generated
 	 */
 	public String convertLogicalSymbolToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Leds createLedsFromString(EDataType eDataType, String initialValue) {
+		Leds result = Leds.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertLedsToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LedStatus createLedStatusFromString(EDataType eDataType, String initialValue) {
+		LedStatus result = LedStatus.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertLedStatusToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -138,34 +138,6 @@ public interface ToplevelstructurePackage extends EPackage {
 	 */
 	int NAMED_ELEMENT_OPERATION_COUNT = IDENTIFIABLE_OPERATION_COUNT + 0;
 
-	/**
-	 * The meta object id for the '{@link org.nader.sennet.toplevelstructure.impl.AbstractResourceImpl <em>Abstract Resource</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nader.sennet.toplevelstructure.impl.AbstractResourceImpl
-	 * @see org.nader.sennet.toplevelstructure.impl.ToplevelstructurePackageImpl#getAbstractResource()
-	 * @generated
-	 */
-	int ABSTRACT_RESOURCE = 2;
-
-	/**
-	 * The number of structural features of the '<em>Abstract Resource</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_RESOURCE_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Abstract Resource</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_RESOURCE_OPERATION_COUNT = 0;
-
 
 	/**
 	 * Returns the meta object for class '{@link org.nader.sennet.toplevelstructure.Identifiable <em>Identifiable</em>}'.
@@ -208,16 +180,6 @@ public interface ToplevelstructurePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNamedElement_Name();
-
-	/**
-	 * Returns the meta object for class '{@link org.nader.sennet.toplevelstructure.AbstractResource <em>Abstract Resource</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Abstract Resource</em>'.
-	 * @see org.nader.sennet.toplevelstructure.AbstractResource
-	 * @generated
-	 */
-	EClass getAbstractResource();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -277,16 +239,6 @@ public interface ToplevelstructurePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
-
-		/**
-		 * The meta object literal for the '{@link org.nader.sennet.toplevelstructure.impl.AbstractResourceImpl <em>Abstract Resource</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.nader.sennet.toplevelstructure.impl.AbstractResourceImpl
-		 * @see org.nader.sennet.toplevelstructure.impl.ToplevelstructurePackageImpl#getAbstractResource()
-		 * @generated
-		 */
-		EClass ABSTRACT_RESOURCE = eINSTANCE.getAbstractResource();
 
 	}
 

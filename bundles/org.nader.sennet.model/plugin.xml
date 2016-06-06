@@ -17,16 +17,16 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated SenNet -->
       <package
-            uri="http://www.nader.org/sennet/tls"
-            class="org.nader.sennet.toplevelstructure.ToplevelstructurePackage"
+            uri="http://www.nader.org/sennet/enums"
+            class="org.nader.sennet.enums.EnumsPackage"
             genModel="model/SenNet.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated SenNet -->
       <package
-            uri="http://www.nader.org/sennet/enums"
-            class="org.nader.sennet.enums.EnumsPackage"
+            uri="http://www.nader.org/sennet/tls"
+            class="org.nader.sennet.toplevelstructure.ToplevelstructurePackage"
             genModel="model/SenNet.genmodel"/>
    </extension>
 
@@ -41,6 +41,22 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated SenNet -->
       <package
+            uri="http://www.nader.org/sennet/sn"
+            class="org.nader.sennet.sensors.SensorsPackage"
+            genModel="model/SenNet.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SenNet -->
+      <package
+            uri="http://www.nader.org/sennet/net"
+            class="org.nader.sennet.network.NetworkPackage"
+            genModel="model/SenNet.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SenNet -->
+      <package
             uri="http://www.nader.org/sennet/jb"
             class="org.nader.sennet.job.JobPackage"
             genModel="model/SenNet.genmodel"/>
@@ -49,32 +65,16 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated SenNet -->
       <package
-            uri="http://www.nader.org/sennet/jb/ac"
-            class="org.nader.sennet.job.actions.ActionsPackage"
+            uri="http://www.nader.org/sennet/jb/jt"
+            class="org.nader.sennet.job.jobtrigger.JobtriggerPackage"
             genModel="model/SenNet.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated SenNet -->
       <package
-            uri="http://www.nader.org/sennet/sn"
-            class="org.nader.sennet.sensor.SensorPackage"
-            genModel="model/SenNet.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated SenNet -->
-      <package
-            uri="http://www.nader.org/sennet/pt"
-            class="org.nader.sennet.port.PortPackage"
-            genModel="model/SenNet.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated SenNet -->
-      <package
-            uri="http://www.nader.org/sennet/nt"
-            class="org.nader.sennet.network.NetworkPackage"
+            uri="http://www.nader.org/sennet/jb/ja"
+            class="org.nader.sennet.job.jobaction.JobactionPackage"
             genModel="model/SenNet.genmodel"/>
    </extension>
 

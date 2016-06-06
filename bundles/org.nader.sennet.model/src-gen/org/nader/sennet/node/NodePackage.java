@@ -87,13 +87,13 @@ public interface NodePackage extends EPackage {
 	int ABSTRACT_NODE__POSITION = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Resources</b></em>' reference list.
+	 * The feature id for the '<em><b>Node Resources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_NODE__RESOURCES = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 1;
+	int ABSTRACT_NODE__NODE_RESOURCES = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Node</em>' class.
@@ -142,13 +142,13 @@ public interface NodePackage extends EPackage {
 	int ABSTRACT_FLAT_NODE__POSITION = ABSTRACT_NODE__POSITION;
 
 	/**
-	 * The feature id for the '<em><b>Resources</b></em>' reference list.
+	 * The feature id for the '<em><b>Node Resources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_FLAT_NODE__RESOURCES = ABSTRACT_NODE__RESOURCES;
+	int ABSTRACT_FLAT_NODE__NODE_RESOURCES = ABSTRACT_NODE__NODE_RESOURCES;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Flat Node</em>' class.
@@ -197,13 +197,13 @@ public interface NodePackage extends EPackage {
 	int ABSTRACT_CLUSTER_NODE__POSITION = ABSTRACT_NODE__POSITION;
 
 	/**
-	 * The feature id for the '<em><b>Resources</b></em>' reference list.
+	 * The feature id for the '<em><b>Node Resources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_CLUSTER_NODE__RESOURCES = ABSTRACT_NODE__RESOURCES;
+	int ABSTRACT_CLUSTER_NODE__NODE_RESOURCES = ABSTRACT_NODE__NODE_RESOURCES;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Cluster Node</em>' class.
@@ -252,13 +252,13 @@ public interface NodePackage extends EPackage {
 	int SENSOR_NODE__POSITION = ABSTRACT_CLUSTER_NODE__POSITION;
 
 	/**
-	 * The feature id for the '<em><b>Resources</b></em>' reference list.
+	 * The feature id for the '<em><b>Node Resources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_NODE__RESOURCES = ABSTRACT_CLUSTER_NODE__RESOURCES;
+	int SENSOR_NODE__NODE_RESOURCES = ABSTRACT_CLUSTER_NODE__NODE_RESOURCES;
 
 	/**
 	 * The number of structural features of the '<em>Sensor Node</em>' class.
@@ -307,13 +307,13 @@ public interface NodePackage extends EPackage {
 	int CLUSTER_HEAD_NODE__POSITION = ABSTRACT_CLUSTER_NODE__POSITION;
 
 	/**
-	 * The feature id for the '<em><b>Resources</b></em>' reference list.
+	 * The feature id for the '<em><b>Node Resources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTER_HEAD_NODE__RESOURCES = ABSTRACT_CLUSTER_NODE__RESOURCES;
+	int CLUSTER_HEAD_NODE__NODE_RESOURCES = ABSTRACT_CLUSTER_NODE__NODE_RESOURCES;
 
 	/**
 	 * The number of structural features of the '<em>Cluster Head Node</em>' class.
@@ -362,13 +362,13 @@ public interface NodePackage extends EPackage {
 	int SINK_NODE__POSITION = ABSTRACT_NODE__POSITION;
 
 	/**
-	 * The feature id for the '<em><b>Resources</b></em>' reference list.
+	 * The feature id for the '<em><b>Node Resources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SINK_NODE__RESOURCES = ABSTRACT_NODE__RESOURCES;
+	int SINK_NODE__NODE_RESOURCES = ABSTRACT_NODE__NODE_RESOURCES;
 
 	/**
 	 * The number of structural features of the '<em>Sink Node</em>' class.
@@ -417,13 +417,13 @@ public interface NodePackage extends EPackage {
 	int COMPUTATION_NODE__POSITION = ABSTRACT_FLAT_NODE__POSITION;
 
 	/**
-	 * The feature id for the '<em><b>Resources</b></em>' reference list.
+	 * The feature id for the '<em><b>Node Resources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPUTATION_NODE__RESOURCES = ABSTRACT_FLAT_NODE__RESOURCES;
+	int COMPUTATION_NODE__NODE_RESOURCES = ABSTRACT_FLAT_NODE__NODE_RESOURCES;
 
 	/**
 	 * The number of structural features of the '<em>Computation Node</em>' class.
@@ -466,15 +466,15 @@ public interface NodePackage extends EPackage {
 	EAttribute getAbstractNode_Position();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.nader.sennet.node.AbstractNode#getResources <em>Resources</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.nader.sennet.node.AbstractNode#getNodeResources <em>Node Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Resources</em>'.
-	 * @see org.nader.sennet.node.AbstractNode#getResources()
+	 * @return the meta object for the containment reference list '<em>Node Resources</em>'.
+	 * @see org.nader.sennet.node.AbstractNode#getNodeResources()
 	 * @see #getAbstractNode()
 	 * @generated
 	 */
-	EReference getAbstractNode_Resources();
+	EReference getAbstractNode_NodeResources();
 
 	/**
 	 * Returns the meta object for class '{@link org.nader.sennet.node.AbstractFlatNode <em>Abstract Flat Node</em>}'.
@@ -578,12 +578,12 @@ public interface NodePackage extends EPackage {
 		EAttribute ABSTRACT_NODE__POSITION = eINSTANCE.getAbstractNode_Position();
 
 		/**
-		 * The meta object literal for the '<em><b>Resources</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Node Resources</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_NODE__RESOURCES = eINSTANCE.getAbstractNode_Resources();
+		EReference ABSTRACT_NODE__NODE_RESOURCES = eINSTANCE.getAbstractNode_NodeResources();
 
 		/**
 		 * The meta object literal for the '{@link org.nader.sennet.node.impl.AbstractFlatNodeImpl <em>Abstract Flat Node</em>}' class.

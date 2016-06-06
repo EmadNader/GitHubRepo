@@ -3,21 +3,30 @@
 package org.nader.sennet.network.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.nader.sennet.enums.InterNodeComm;
 import org.nader.sennet.enums.RoutingProtocol;
+
 import org.nader.sennet.network.AbstractNetwork;
 import org.nader.sennet.network.NetworkPackage;
+
 import org.nader.sennet.node.SinkNode;
-import org.nader.sennet.port.AbstractPort;
-import org.nader.sennet.sensor.AbstractSensor;
+
+import org.nader.sennet.sensors.AbstractSensor;
+
 import org.nader.sennet.toplevelstructure.impl.IdentifiableImpl;
 
 /**
@@ -30,9 +39,8 @@ import org.nader.sennet.toplevelstructure.impl.IdentifiableImpl;
  *   <li>{@link org.nader.sennet.network.impl.AbstractNetworkImpl#getNbOfNodes <em>Nb Of Nodes</em>}</li>
  *   <li>{@link org.nader.sennet.network.impl.AbstractNetworkImpl#getInterNodeComm <em>Inter Node Comm</em>}</li>
  *   <li>{@link org.nader.sennet.network.impl.AbstractNetworkImpl#getRoutingProtocol <em>Routing Protocol</em>}</li>
+ *   <li>{@link org.nader.sennet.network.impl.AbstractNetworkImpl#getResources <em>Resources</em>}</li>
  *   <li>{@link org.nader.sennet.network.impl.AbstractNetworkImpl#getSink <em>Sink</em>}</li>
- *   <li>{@link org.nader.sennet.network.impl.AbstractNetworkImpl#getSensors <em>Sensors</em>}</li>
- *   <li>{@link org.nader.sennet.network.impl.AbstractNetworkImpl#getPorts <em>Ports</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,7 +108,17 @@ public abstract class AbstractNetworkImpl extends IdentifiableImpl implements Ab
 	protected RoutingProtocol routingProtocol = ROUTING_PROTOCOL_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSink() <em>Sink</em>}' reference.
+	 * The cached value of the '{@link #getResources() <em>Resources</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResources()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AbstractSensor> resources;
+
+	/**
+	 * The cached value of the '{@link #getSink() <em>Sink</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSink()
@@ -108,26 +126,6 @@ public abstract class AbstractNetworkImpl extends IdentifiableImpl implements Ab
 	 * @ordered
 	 */
 	protected SinkNode sink;
-
-	/**
-	 * The cached value of the '{@link #getSensors() <em>Sensors</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSensors()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<AbstractSensor> sensors;
-
-	/**
-	 * The cached value of the '{@link #getPorts() <em>Ports</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPorts()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<AbstractPort> ports;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,15 +214,19 @@ public abstract class AbstractNetworkImpl extends IdentifiableImpl implements Ab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SinkNode getSink() {
-		if (sink != null && sink.eIsProxy()) {
-			InternalEObject oldSink = (InternalEObject)sink;
-			sink = (SinkNode)eResolveProxy(oldSink);
-			if (sink != oldSink) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NetworkPackage.ABSTRACT_NETWORK__SINK, oldSink, sink));
-			}
+	public EList<AbstractSensor> getResources() {
+		if (resources == null) {
+			resources = new EObjectContainmentEList<AbstractSensor>(AbstractSensor.class, this, NetworkPackage.ABSTRACT_NETWORK__RESOURCES);
 		}
+		return resources;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SinkNode getSink() {
 		return sink;
 	}
 
@@ -233,8 +235,14 @@ public abstract class AbstractNetworkImpl extends IdentifiableImpl implements Ab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SinkNode basicGetSink() {
-		return sink;
+	public NotificationChain basicSetSink(SinkNode newSink, NotificationChain msgs) {
+		SinkNode oldSink = sink;
+		sink = newSink;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, NetworkPackage.ABSTRACT_NETWORK__SINK, oldSink, newSink);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -243,34 +251,17 @@ public abstract class AbstractNetworkImpl extends IdentifiableImpl implements Ab
 	 * @generated
 	 */
 	public void setSink(SinkNode newSink) {
-		SinkNode oldSink = sink;
-		sink = newSink;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NetworkPackage.ABSTRACT_NETWORK__SINK, oldSink, sink));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<AbstractSensor> getSensors() {
-		if (sensors == null) {
-			sensors = new EObjectContainmentEList<AbstractSensor>(AbstractSensor.class, this, NetworkPackage.ABSTRACT_NETWORK__SENSORS);
+		if (newSink != sink) {
+			NotificationChain msgs = null;
+			if (sink != null)
+				msgs = ((InternalEObject)sink).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - NetworkPackage.ABSTRACT_NETWORK__SINK, null, msgs);
+			if (newSink != null)
+				msgs = ((InternalEObject)newSink).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - NetworkPackage.ABSTRACT_NETWORK__SINK, null, msgs);
+			msgs = basicSetSink(newSink, msgs);
+			if (msgs != null) msgs.dispatch();
 		}
-		return sensors;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<AbstractPort> getPorts() {
-		if (ports == null) {
-			ports = new EObjectContainmentEList<AbstractPort>(AbstractPort.class, this, NetworkPackage.ABSTRACT_NETWORK__PORTS);
-		}
-		return ports;
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NetworkPackage.ABSTRACT_NETWORK__SINK, newSink, newSink));
 	}
 
 	/**
@@ -281,10 +272,10 @@ public abstract class AbstractNetworkImpl extends IdentifiableImpl implements Ab
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case NetworkPackage.ABSTRACT_NETWORK__SENSORS:
-				return ((InternalEList<?>)getSensors()).basicRemove(otherEnd, msgs);
-			case NetworkPackage.ABSTRACT_NETWORK__PORTS:
-				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
+			case NetworkPackage.ABSTRACT_NETWORK__RESOURCES:
+				return ((InternalEList<?>)getResources()).basicRemove(otherEnd, msgs);
+			case NetworkPackage.ABSTRACT_NETWORK__SINK:
+				return basicSetSink(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -303,13 +294,10 @@ public abstract class AbstractNetworkImpl extends IdentifiableImpl implements Ab
 				return getInterNodeComm();
 			case NetworkPackage.ABSTRACT_NETWORK__ROUTING_PROTOCOL:
 				return getRoutingProtocol();
+			case NetworkPackage.ABSTRACT_NETWORK__RESOURCES:
+				return getResources();
 			case NetworkPackage.ABSTRACT_NETWORK__SINK:
-				if (resolve) return getSink();
-				return basicGetSink();
-			case NetworkPackage.ABSTRACT_NETWORK__SENSORS:
-				return getSensors();
-			case NetworkPackage.ABSTRACT_NETWORK__PORTS:
-				return getPorts();
+				return getSink();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -332,16 +320,12 @@ public abstract class AbstractNetworkImpl extends IdentifiableImpl implements Ab
 			case NetworkPackage.ABSTRACT_NETWORK__ROUTING_PROTOCOL:
 				setRoutingProtocol((RoutingProtocol)newValue);
 				return;
+			case NetworkPackage.ABSTRACT_NETWORK__RESOURCES:
+				getResources().clear();
+				getResources().addAll((Collection<? extends AbstractSensor>)newValue);
+				return;
 			case NetworkPackage.ABSTRACT_NETWORK__SINK:
 				setSink((SinkNode)newValue);
-				return;
-			case NetworkPackage.ABSTRACT_NETWORK__SENSORS:
-				getSensors().clear();
-				getSensors().addAll((Collection<? extends AbstractSensor>)newValue);
-				return;
-			case NetworkPackage.ABSTRACT_NETWORK__PORTS:
-				getPorts().clear();
-				getPorts().addAll((Collection<? extends AbstractPort>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -364,14 +348,11 @@ public abstract class AbstractNetworkImpl extends IdentifiableImpl implements Ab
 			case NetworkPackage.ABSTRACT_NETWORK__ROUTING_PROTOCOL:
 				setRoutingProtocol(ROUTING_PROTOCOL_EDEFAULT);
 				return;
+			case NetworkPackage.ABSTRACT_NETWORK__RESOURCES:
+				getResources().clear();
+				return;
 			case NetworkPackage.ABSTRACT_NETWORK__SINK:
 				setSink((SinkNode)null);
-				return;
-			case NetworkPackage.ABSTRACT_NETWORK__SENSORS:
-				getSensors().clear();
-				return;
-			case NetworkPackage.ABSTRACT_NETWORK__PORTS:
-				getPorts().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -391,12 +372,10 @@ public abstract class AbstractNetworkImpl extends IdentifiableImpl implements Ab
 				return interNodeComm != INTER_NODE_COMM_EDEFAULT;
 			case NetworkPackage.ABSTRACT_NETWORK__ROUTING_PROTOCOL:
 				return routingProtocol != ROUTING_PROTOCOL_EDEFAULT;
+			case NetworkPackage.ABSTRACT_NETWORK__RESOURCES:
+				return resources != null && !resources.isEmpty();
 			case NetworkPackage.ABSTRACT_NETWORK__SINK:
 				return sink != null;
-			case NetworkPackage.ABSTRACT_NETWORK__SENSORS:
-				return sensors != null && !sensors.isEmpty();
-			case NetworkPackage.ABSTRACT_NETWORK__PORTS:
-				return ports != null && !ports.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

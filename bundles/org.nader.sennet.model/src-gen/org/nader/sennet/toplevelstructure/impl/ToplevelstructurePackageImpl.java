@@ -18,11 +18,15 @@ import org.nader.sennet.impl.SennetPackageImpl;
 
 import org.nader.sennet.job.JobPackage;
 
-import org.nader.sennet.job.actions.ActionsPackage;
-
-import org.nader.sennet.job.actions.impl.ActionsPackageImpl;
-
 import org.nader.sennet.job.impl.JobPackageImpl;
+
+import org.nader.sennet.job.jobaction.JobactionPackage;
+
+import org.nader.sennet.job.jobaction.impl.JobactionPackageImpl;
+
+import org.nader.sennet.job.jobtrigger.JobtriggerPackage;
+
+import org.nader.sennet.job.jobtrigger.impl.JobtriggerPackageImpl;
 
 import org.nader.sennet.network.NetworkPackage;
 
@@ -32,15 +36,10 @@ import org.nader.sennet.node.NodePackage;
 
 import org.nader.sennet.node.impl.NodePackageImpl;
 
-import org.nader.sennet.port.PortPackage;
+import org.nader.sennet.sensors.SensorsPackage;
 
-import org.nader.sennet.port.impl.PortPackageImpl;
+import org.nader.sennet.sensors.impl.SensorsPackageImpl;
 
-import org.nader.sennet.sensor.SensorPackage;
-
-import org.nader.sennet.sensor.impl.SensorPackageImpl;
-
-import org.nader.sennet.toplevelstructure.AbstractResource;
 import org.nader.sennet.toplevelstructure.Identifiable;
 import org.nader.sennet.toplevelstructure.NamedElement;
 import org.nader.sennet.toplevelstructure.ToplevelstructureFactory;
@@ -66,13 +65,6 @@ public class ToplevelstructurePackageImpl extends EPackageImpl implements Toplev
 	 * @generated
 	 */
 	private EClass namedElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass abstractResourceEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -124,33 +116,33 @@ public class ToplevelstructurePackageImpl extends EPackageImpl implements Toplev
 		SennetPackageImpl theSennetPackage = (SennetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SennetPackage.eNS_URI) instanceof SennetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SennetPackage.eNS_URI) : SennetPackage.eINSTANCE);
 		EnumsPackageImpl theEnumsPackage = (EnumsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnumsPackage.eNS_URI) instanceof EnumsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnumsPackage.eNS_URI) : EnumsPackage.eINSTANCE);
 		NodePackageImpl theNodePackage = (NodePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NodePackage.eNS_URI) instanceof NodePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NodePackage.eNS_URI) : NodePackage.eINSTANCE);
-		JobPackageImpl theJobPackage = (JobPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(JobPackage.eNS_URI) instanceof JobPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(JobPackage.eNS_URI) : JobPackage.eINSTANCE);
-		ActionsPackageImpl theActionsPackage = (ActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActionsPackage.eNS_URI) instanceof ActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActionsPackage.eNS_URI) : ActionsPackage.eINSTANCE);
-		SensorPackageImpl theSensorPackage = (SensorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SensorPackage.eNS_URI) instanceof SensorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SensorPackage.eNS_URI) : SensorPackage.eINSTANCE);
-		PortPackageImpl thePortPackage = (PortPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortPackage.eNS_URI) instanceof PortPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortPackage.eNS_URI) : PortPackage.eINSTANCE);
+		SensorsPackageImpl theSensorsPackage = (SensorsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SensorsPackage.eNS_URI) instanceof SensorsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SensorsPackage.eNS_URI) : SensorsPackage.eINSTANCE);
 		NetworkPackageImpl theNetworkPackage = (NetworkPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) instanceof NetworkPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) : NetworkPackage.eINSTANCE);
+		JobPackageImpl theJobPackage = (JobPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(JobPackage.eNS_URI) instanceof JobPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(JobPackage.eNS_URI) : JobPackage.eINSTANCE);
+		JobtriggerPackageImpl theJobtriggerPackage = (JobtriggerPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(JobtriggerPackage.eNS_URI) instanceof JobtriggerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(JobtriggerPackage.eNS_URI) : JobtriggerPackage.eINSTANCE);
+		JobactionPackageImpl theJobactionPackage = (JobactionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(JobactionPackage.eNS_URI) instanceof JobactionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(JobactionPackage.eNS_URI) : JobactionPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theToplevelstructurePackage.createPackageContents();
 		theSennetPackage.createPackageContents();
 		theEnumsPackage.createPackageContents();
 		theNodePackage.createPackageContents();
-		theJobPackage.createPackageContents();
-		theActionsPackage.createPackageContents();
-		theSensorPackage.createPackageContents();
-		thePortPackage.createPackageContents();
+		theSensorsPackage.createPackageContents();
 		theNetworkPackage.createPackageContents();
+		theJobPackage.createPackageContents();
+		theJobtriggerPackage.createPackageContents();
+		theJobactionPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theToplevelstructurePackage.initializePackageContents();
 		theSennetPackage.initializePackageContents();
 		theEnumsPackage.initializePackageContents();
 		theNodePackage.initializePackageContents();
-		theJobPackage.initializePackageContents();
-		theActionsPackage.initializePackageContents();
-		theSensorPackage.initializePackageContents();
-		thePortPackage.initializePackageContents();
+		theSensorsPackage.initializePackageContents();
 		theNetworkPackage.initializePackageContents();
+		theJobPackage.initializePackageContents();
+		theJobtriggerPackage.initializePackageContents();
+		theJobactionPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theToplevelstructurePackage.freeze();
@@ -202,15 +194,6 @@ public class ToplevelstructurePackageImpl extends EPackageImpl implements Toplev
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAbstractResource() {
-		return abstractResourceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ToplevelstructureFactory getToplevelstructureFactory() {
 		return (ToplevelstructureFactory)getEFactoryInstance();
 	}
@@ -239,8 +222,6 @@ public class ToplevelstructurePackageImpl extends EPackageImpl implements Toplev
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
-
-		abstractResourceEClass = createEClass(ABSTRACT_RESOURCE);
 	}
 
 	/**
@@ -279,8 +260,6 @@ public class ToplevelstructurePackageImpl extends EPackageImpl implements Toplev
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(abstractResourceEClass, AbstractResource.class, "AbstractResource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //ToplevelstructurePackageImpl

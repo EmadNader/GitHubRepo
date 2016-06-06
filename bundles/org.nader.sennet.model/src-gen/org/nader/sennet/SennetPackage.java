@@ -2,7 +2,6 @@
  */
 package org.nader.sennet;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -59,14 +58,14 @@ public interface SennetPackage extends EPackage {
 	SennetPackage eINSTANCE = org.nader.sennet.impl.SennetPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.nader.sennet.impl.WSNappImpl <em>WS Napp</em>}' class.
+	 * The meta object id for the '{@link org.nader.sennet.impl.SeNetAppImpl <em>Se Net App</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.nader.sennet.impl.WSNappImpl
-	 * @see org.nader.sennet.impl.SennetPackageImpl#getWSNapp()
+	 * @see org.nader.sennet.impl.SeNetAppImpl
+	 * @see org.nader.sennet.impl.SennetPackageImpl#getSeNetApp()
 	 * @generated
 	 */
-	int WS_NAPP = 0;
+	int SE_NET_APP = 0;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -75,7 +74,7 @@ public interface SennetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WS_NAPP__ID = ToplevelstructurePackage.NAMED_ELEMENT__ID;
+	int SE_NET_APP__ID = ToplevelstructurePackage.NAMED_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -84,16 +83,7 @@ public interface SennetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WS_NAPP__NAME = ToplevelstructurePackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Network</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WS_NAPP__NETWORK = ToplevelstructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int SE_NET_APP__NAME = ToplevelstructurePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Jobs</b></em>' containment reference list.
@@ -102,196 +92,47 @@ public interface SennetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WS_NAPP__JOBS = ToplevelstructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int SE_NET_APP__JOBS = ToplevelstructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>WS Napp</em>' class.
+	 * The number of structural features of the '<em>Se Net App</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WS_NAPP_FEATURE_COUNT = ToplevelstructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int SE_NET_APP_FEATURE_COUNT = ToplevelstructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>WS Napp</em>' class.
+	 * The number of operations of the '<em>Se Net App</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WS_NAPP_OPERATION_COUNT = ToplevelstructurePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int SE_NET_APP_OPERATION_COUNT = ToplevelstructurePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
 
 	/**
-	 * The meta object id for the '{@link org.nader.sennet.impl.LogicalConditionImpl <em>Logical Condition</em>}' class.
+	 * Returns the meta object for class '{@link org.nader.sennet.SeNetApp <em>Se Net App</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.nader.sennet.impl.LogicalConditionImpl
-	 * @see org.nader.sennet.impl.SennetPackageImpl#getLogicalCondition()
+	 * @return the meta object for class '<em>Se Net App</em>'.
+	 * @see org.nader.sennet.SeNetApp
 	 * @generated
 	 */
-	int LOGICAL_CONDITION = 1;
+	EClass getSeNetApp();
 
 	/**
-	 * The feature id for the '<em><b>Job Schedule</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGICAL_CONDITION__JOB_SCHEDULE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Sensor Term</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGICAL_CONDITION__SENSOR_TERM = 1;
-
-	/**
-	 * The feature id for the '<em><b>Logical Symbol</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGICAL_CONDITION__LOGICAL_SYMBOL = 2;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGICAL_CONDITION__VALUE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Unit</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGICAL_CONDITION__UNIT = 4;
-
-	/**
-	 * The number of structural features of the '<em>Logical Condition</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGICAL_CONDITION_FEATURE_COUNT = 5;
-
-	/**
-	 * The number of operations of the '<em>Logical Condition</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGICAL_CONDITION_OPERATION_COUNT = 0;
-
-
-	/**
-	 * Returns the meta object for class '{@link org.nader.sennet.WSNapp <em>WS Napp</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>WS Napp</em>'.
-	 * @see org.nader.sennet.WSNapp
-	 * @generated
-	 */
-	EClass getWSNapp();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.nader.sennet.WSNapp#getNetwork <em>Network</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Network</em>'.
-	 * @see org.nader.sennet.WSNapp#getNetwork()
-	 * @see #getWSNapp()
-	 * @generated
-	 */
-	EReference getWSNapp_Network();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.nader.sennet.WSNapp#getJobs <em>Jobs</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.nader.sennet.SeNetApp#getJobs <em>Jobs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Jobs</em>'.
-	 * @see org.nader.sennet.WSNapp#getJobs()
-	 * @see #getWSNapp()
+	 * @see org.nader.sennet.SeNetApp#getJobs()
+	 * @see #getSeNetApp()
 	 * @generated
 	 */
-	EReference getWSNapp_Jobs();
-
-	/**
-	 * Returns the meta object for class '{@link org.nader.sennet.LogicalCondition <em>Logical Condition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Logical Condition</em>'.
-	 * @see org.nader.sennet.LogicalCondition
-	 * @generated
-	 */
-	EClass getLogicalCondition();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.nader.sennet.LogicalCondition#getJobSchedule <em>Job Schedule</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Job Schedule</em>'.
-	 * @see org.nader.sennet.LogicalCondition#getJobSchedule()
-	 * @see #getLogicalCondition()
-	 * @generated
-	 */
-	EAttribute getLogicalCondition_JobSchedule();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.nader.sennet.LogicalCondition#getSensorTerm <em>Sensor Term</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Sensor Term</em>'.
-	 * @see org.nader.sennet.LogicalCondition#getSensorTerm()
-	 * @see #getLogicalCondition()
-	 * @generated
-	 */
-	EAttribute getLogicalCondition_SensorTerm();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.nader.sennet.LogicalCondition#getLogicalSymbol <em>Logical Symbol</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Logical Symbol</em>'.
-	 * @see org.nader.sennet.LogicalCondition#getLogicalSymbol()
-	 * @see #getLogicalCondition()
-	 * @generated
-	 */
-	EAttribute getLogicalCondition_LogicalSymbol();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.nader.sennet.LogicalCondition#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see org.nader.sennet.LogicalCondition#getValue()
-	 * @see #getLogicalCondition()
-	 * @generated
-	 */
-	EAttribute getLogicalCondition_Value();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.nader.sennet.LogicalCondition#getUnit <em>Unit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Unit</em>'.
-	 * @see org.nader.sennet.LogicalCondition#getUnit()
-	 * @see #getLogicalCondition()
-	 * @generated
-	 */
-	EAttribute getLogicalCondition_Unit();
+	EReference getSeNetApp_Jobs();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -317,22 +158,14 @@ public interface SennetPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.nader.sennet.impl.WSNappImpl <em>WS Napp</em>}' class.
+		 * The meta object literal for the '{@link org.nader.sennet.impl.SeNetAppImpl <em>Se Net App</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.nader.sennet.impl.WSNappImpl
-		 * @see org.nader.sennet.impl.SennetPackageImpl#getWSNapp()
+		 * @see org.nader.sennet.impl.SeNetAppImpl
+		 * @see org.nader.sennet.impl.SennetPackageImpl#getSeNetApp()
 		 * @generated
 		 */
-		EClass WS_NAPP = eINSTANCE.getWSNapp();
-
-		/**
-		 * The meta object literal for the '<em><b>Network</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference WS_NAPP__NETWORK = eINSTANCE.getWSNapp_Network();
+		EClass SE_NET_APP = eINSTANCE.getSeNetApp();
 
 		/**
 		 * The meta object literal for the '<em><b>Jobs</b></em>' containment reference list feature.
@@ -340,57 +173,7 @@ public interface SennetPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WS_NAPP__JOBS = eINSTANCE.getWSNapp_Jobs();
-
-		/**
-		 * The meta object literal for the '{@link org.nader.sennet.impl.LogicalConditionImpl <em>Logical Condition</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.nader.sennet.impl.LogicalConditionImpl
-		 * @see org.nader.sennet.impl.SennetPackageImpl#getLogicalCondition()
-		 * @generated
-		 */
-		EClass LOGICAL_CONDITION = eINSTANCE.getLogicalCondition();
-
-		/**
-		 * The meta object literal for the '<em><b>Job Schedule</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LOGICAL_CONDITION__JOB_SCHEDULE = eINSTANCE.getLogicalCondition_JobSchedule();
-
-		/**
-		 * The meta object literal for the '<em><b>Sensor Term</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LOGICAL_CONDITION__SENSOR_TERM = eINSTANCE.getLogicalCondition_SensorTerm();
-
-		/**
-		 * The meta object literal for the '<em><b>Logical Symbol</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LOGICAL_CONDITION__LOGICAL_SYMBOL = eINSTANCE.getLogicalCondition_LogicalSymbol();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LOGICAL_CONDITION__VALUE = eINSTANCE.getLogicalCondition_Value();
-
-		/**
-		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LOGICAL_CONDITION__UNIT = eINSTANCE.getLogicalCondition_Unit();
+		EReference SE_NET_APP__JOBS = eINSTANCE.getSeNetApp_Jobs();
 
 	}
 

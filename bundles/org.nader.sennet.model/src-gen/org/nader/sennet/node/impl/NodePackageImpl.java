@@ -19,11 +19,15 @@ import org.nader.sennet.impl.SennetPackageImpl;
 
 import org.nader.sennet.job.JobPackage;
 
-import org.nader.sennet.job.actions.ActionsPackage;
-
-import org.nader.sennet.job.actions.impl.ActionsPackageImpl;
-
 import org.nader.sennet.job.impl.JobPackageImpl;
+
+import org.nader.sennet.job.jobaction.JobactionPackage;
+
+import org.nader.sennet.job.jobaction.impl.JobactionPackageImpl;
+
+import org.nader.sennet.job.jobtrigger.JobtriggerPackage;
+
+import org.nader.sennet.job.jobtrigger.impl.JobtriggerPackageImpl;
 
 import org.nader.sennet.network.NetworkPackage;
 
@@ -39,13 +43,9 @@ import org.nader.sennet.node.NodePackage;
 import org.nader.sennet.node.SensorNode;
 import org.nader.sennet.node.SinkNode;
 
-import org.nader.sennet.port.PortPackage;
+import org.nader.sennet.sensors.SensorsPackage;
 
-import org.nader.sennet.port.impl.PortPackageImpl;
-
-import org.nader.sennet.sensor.SensorPackage;
-
-import org.nader.sennet.sensor.impl.SensorPackageImpl;
+import org.nader.sennet.sensors.impl.SensorsPackageImpl;
 
 import org.nader.sennet.toplevelstructure.ToplevelstructurePackage;
 
@@ -155,35 +155,35 @@ public class NodePackageImpl extends EPackageImpl implements NodePackage {
 
 		// Obtain or create and register interdependencies
 		SennetPackageImpl theSennetPackage = (SennetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SennetPackage.eNS_URI) instanceof SennetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SennetPackage.eNS_URI) : SennetPackage.eINSTANCE);
-		ToplevelstructurePackageImpl theToplevelstructurePackage = (ToplevelstructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ToplevelstructurePackage.eNS_URI) instanceof ToplevelstructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ToplevelstructurePackage.eNS_URI) : ToplevelstructurePackage.eINSTANCE);
 		EnumsPackageImpl theEnumsPackage = (EnumsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnumsPackage.eNS_URI) instanceof EnumsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnumsPackage.eNS_URI) : EnumsPackage.eINSTANCE);
-		JobPackageImpl theJobPackage = (JobPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(JobPackage.eNS_URI) instanceof JobPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(JobPackage.eNS_URI) : JobPackage.eINSTANCE);
-		ActionsPackageImpl theActionsPackage = (ActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActionsPackage.eNS_URI) instanceof ActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActionsPackage.eNS_URI) : ActionsPackage.eINSTANCE);
-		SensorPackageImpl theSensorPackage = (SensorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SensorPackage.eNS_URI) instanceof SensorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SensorPackage.eNS_URI) : SensorPackage.eINSTANCE);
-		PortPackageImpl thePortPackage = (PortPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortPackage.eNS_URI) instanceof PortPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortPackage.eNS_URI) : PortPackage.eINSTANCE);
+		ToplevelstructurePackageImpl theToplevelstructurePackage = (ToplevelstructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ToplevelstructurePackage.eNS_URI) instanceof ToplevelstructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ToplevelstructurePackage.eNS_URI) : ToplevelstructurePackage.eINSTANCE);
+		SensorsPackageImpl theSensorsPackage = (SensorsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SensorsPackage.eNS_URI) instanceof SensorsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SensorsPackage.eNS_URI) : SensorsPackage.eINSTANCE);
 		NetworkPackageImpl theNetworkPackage = (NetworkPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) instanceof NetworkPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) : NetworkPackage.eINSTANCE);
+		JobPackageImpl theJobPackage = (JobPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(JobPackage.eNS_URI) instanceof JobPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(JobPackage.eNS_URI) : JobPackage.eINSTANCE);
+		JobtriggerPackageImpl theJobtriggerPackage = (JobtriggerPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(JobtriggerPackage.eNS_URI) instanceof JobtriggerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(JobtriggerPackage.eNS_URI) : JobtriggerPackage.eINSTANCE);
+		JobactionPackageImpl theJobactionPackage = (JobactionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(JobactionPackage.eNS_URI) instanceof JobactionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(JobactionPackage.eNS_URI) : JobactionPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theNodePackage.createPackageContents();
 		theSennetPackage.createPackageContents();
-		theToplevelstructurePackage.createPackageContents();
 		theEnumsPackage.createPackageContents();
-		theJobPackage.createPackageContents();
-		theActionsPackage.createPackageContents();
-		theSensorPackage.createPackageContents();
-		thePortPackage.createPackageContents();
+		theToplevelstructurePackage.createPackageContents();
+		theSensorsPackage.createPackageContents();
 		theNetworkPackage.createPackageContents();
+		theJobPackage.createPackageContents();
+		theJobtriggerPackage.createPackageContents();
+		theJobactionPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theNodePackage.initializePackageContents();
 		theSennetPackage.initializePackageContents();
-		theToplevelstructurePackage.initializePackageContents();
 		theEnumsPackage.initializePackageContents();
-		theJobPackage.initializePackageContents();
-		theActionsPackage.initializePackageContents();
-		theSensorPackage.initializePackageContents();
-		thePortPackage.initializePackageContents();
+		theToplevelstructurePackage.initializePackageContents();
+		theSensorsPackage.initializePackageContents();
 		theNetworkPackage.initializePackageContents();
+		theJobPackage.initializePackageContents();
+		theJobtriggerPackage.initializePackageContents();
+		theJobactionPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theNodePackage.freeze();
@@ -217,7 +217,7 @@ public class NodePackageImpl extends EPackageImpl implements NodePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractNode_Resources() {
+	public EReference getAbstractNode_NodeResources() {
 		return (EReference)abstractNodeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -305,7 +305,7 @@ public class NodePackageImpl extends EPackageImpl implements NodePackage {
 		// Create classes and their features
 		abstractNodeEClass = createEClass(ABSTRACT_NODE);
 		createEAttribute(abstractNodeEClass, ABSTRACT_NODE__POSITION);
-		createEReference(abstractNodeEClass, ABSTRACT_NODE__RESOURCES);
+		createEReference(abstractNodeEClass, ABSTRACT_NODE__NODE_RESOURCES);
 
 		abstractFlatNodeEClass = createEClass(ABSTRACT_FLAT_NODE);
 
@@ -346,6 +346,7 @@ public class NodePackageImpl extends EPackageImpl implements NodePackage {
 		// Obtain other dependent packages
 		ToplevelstructurePackage theToplevelstructurePackage = (ToplevelstructurePackage)EPackage.Registry.INSTANCE.getEPackage(ToplevelstructurePackage.eNS_URI);
 		EnumsPackage theEnumsPackage = (EnumsPackage)EPackage.Registry.INSTANCE.getEPackage(EnumsPackage.eNS_URI);
+		SensorsPackage theSensorsPackage = (SensorsPackage)EPackage.Registry.INSTANCE.getEPackage(SensorsPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -364,7 +365,7 @@ public class NodePackageImpl extends EPackageImpl implements NodePackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(abstractNodeEClass, AbstractNode.class, "AbstractNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbstractNode_Position(), theEnumsPackage.getPosition(), "position", null, 0, 1, AbstractNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractNode_Resources(), theToplevelstructurePackage.getAbstractResource(), null, "resources", null, 0, -1, AbstractNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractNode_NodeResources(), theSensorsPackage.getAbstractSensor(), null, "nodeResources", null, 0, -1, AbstractNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractFlatNodeEClass, AbstractFlatNode.class, "AbstractFlatNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

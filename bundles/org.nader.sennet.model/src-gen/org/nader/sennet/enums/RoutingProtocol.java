@@ -176,7 +176,37 @@ public enum RoutingProtocol implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SPEED(15, "speed", "speed");
+	SPEED(15, "speed", "speed"),
+
+	/**
+	 * The '<em><b>Ctp</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #CTP_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	CTP(16, "ctp", "ctp"),
+
+	/**
+	 * The '<em><b>Dismentation</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #DISMENTATION_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	DISMENTATION(17, "dismentation", "dismentation"),
+
+	/**
+	 * The '<em><b>Active Message</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #ACTIVE_MESSAGE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	ACTIVE_MESSAGE(18, "activeMessage", "activeMessage");
 
 	/**
 	 * The '<em><b>Leach</b></em>' literal value.
@@ -419,6 +449,51 @@ public enum RoutingProtocol implements Enumerator {
 	public static final int SPEED_VALUE = 15;
 
 	/**
+	 * The '<em><b>Ctp</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Ctp</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #CTP
+	 * @model name="ctp"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CTP_VALUE = 16;
+
+	/**
+	 * The '<em><b>Dismentation</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Dismentation</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #DISMENTATION
+	 * @model name="dismentation"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int DISMENTATION_VALUE = 17;
+
+	/**
+	 * The '<em><b>Active Message</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Active Message</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #ACTIVE_MESSAGE
+	 * @model name="activeMessage"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ACTIVE_MESSAGE_VALUE = 18;
+
+	/**
 	 * An array of all the '<em><b>Routing Protocol</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -442,6 +517,9 @@ public enum RoutingProtocol implements Enumerator {
 			PEGASIS,
 			TEEN,
 			SPEED,
+			CTP,
+			DISMENTATION,
+			ACTIVE_MESSAGE,
 		};
 
 	/**
@@ -508,6 +586,9 @@ public enum RoutingProtocol implements Enumerator {
 			case PEGASIS_VALUE: return PEGASIS;
 			case TEEN_VALUE: return TEEN;
 			case SPEED_VALUE: return SPEED;
+			case CTP_VALUE: return CTP;
+			case DISMENTATION_VALUE: return DISMENTATION;
+			case ACTIVE_MESSAGE_VALUE: return ACTIVE_MESSAGE;
 		}
 		return null;
 	}

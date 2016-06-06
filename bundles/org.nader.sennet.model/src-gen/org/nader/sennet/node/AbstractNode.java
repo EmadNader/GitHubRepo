@@ -6,7 +6,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.nader.sennet.enums.Position;
 
-import org.nader.sennet.toplevelstructure.AbstractResource;
+import org.nader.sennet.sensors.AbstractSensor;
+
 import org.nader.sennet.toplevelstructure.Identifiable;
 
 /**
@@ -18,7 +19,7 @@ import org.nader.sennet.toplevelstructure.Identifiable;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.nader.sennet.node.AbstractNode#getPosition <em>Position</em>}</li>
- *   <li>{@link org.nader.sennet.node.AbstractNode#getResources <em>Resources</em>}</li>
+ *   <li>{@link org.nader.sennet.node.AbstractNode#getNodeResources <em>Node Resources</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,19 +58,19 @@ public interface AbstractNode extends Identifiable {
 	void setPosition(Position value);
 
 	/**
-	 * Returns the value of the '<em><b>Resources</b></em>' reference list.
-	 * The list contents are of type {@link org.nader.sennet.toplevelstructure.AbstractResource}.
+	 * Returns the value of the '<em><b>Node Resources</b></em>' containment reference list.
+	 * The list contents are of type {@link org.nader.sennet.sensors.AbstractSensor}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Resources</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Node Resources</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resources</em>' reference list.
-	 * @see org.nader.sennet.node.NodePackage#getAbstractNode_Resources()
-	 * @model
+	 * @return the value of the '<em>Node Resources</em>' containment reference list.
+	 * @see org.nader.sennet.node.NodePackage#getAbstractNode_NodeResources()
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<AbstractResource> getResources();
+	EList<AbstractSensor> getNodeResources();
 
 } // AbstractNode

@@ -56,10 +56,12 @@ public class JobFactoryImpl extends EFactoryImpl implements JobFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case JobPackage.CONTINUOUS_JOB: return createContinuousJob();
-			case JobPackage.EVENT_DRIVEN_JOB: return createEventDrivenJob();
-			case JobPackage.PERIODIC_JOB: return createPeriodicJob();
-			case JobPackage.REQUEST_REPLAY_JOB: return createRequestReplayJob();
+			case JobPackage.SENSE_FORWARD_JOB: return createSenseForwardJob();
+			case JobPackage.AGGREGATION_JOB: return createAggregationJob();
+			case JobPackage.FUSION_JOB: return createFusionJob();
+			case JobPackage.SENSE_NOW_JOB: return createSenseNowJob();
+			case JobPackage.SINK_JOB: return createSinkJob();
+			case JobPackage.REGULAR_SENSE_JOB: return createRegularSenseJob();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -70,9 +72,9 @@ public class JobFactoryImpl extends EFactoryImpl implements JobFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContinuousJob createContinuousJob() {
-		ContinuousJobImpl continuousJob = new ContinuousJobImpl();
-		return continuousJob;
+	public SenseForwardJob createSenseForwardJob() {
+		SenseForwardJobImpl senseForwardJob = new SenseForwardJobImpl();
+		return senseForwardJob;
 	}
 
 	/**
@@ -80,9 +82,9 @@ public class JobFactoryImpl extends EFactoryImpl implements JobFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EventDrivenJob createEventDrivenJob() {
-		EventDrivenJobImpl eventDrivenJob = new EventDrivenJobImpl();
-		return eventDrivenJob;
+	public AggregationJob createAggregationJob() {
+		AggregationJobImpl aggregationJob = new AggregationJobImpl();
+		return aggregationJob;
 	}
 
 	/**
@@ -90,9 +92,9 @@ public class JobFactoryImpl extends EFactoryImpl implements JobFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PeriodicJob createPeriodicJob() {
-		PeriodicJobImpl periodicJob = new PeriodicJobImpl();
-		return periodicJob;
+	public FusionJob createFusionJob() {
+		FusionJobImpl fusionJob = new FusionJobImpl();
+		return fusionJob;
 	}
 
 	/**
@@ -100,9 +102,29 @@ public class JobFactoryImpl extends EFactoryImpl implements JobFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RequestReplayJob createRequestReplayJob() {
-		RequestReplayJobImpl requestReplayJob = new RequestReplayJobImpl();
-		return requestReplayJob;
+	public SenseNowJob createSenseNowJob() {
+		SenseNowJobImpl senseNowJob = new SenseNowJobImpl();
+		return senseNowJob;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SinkJob createSinkJob() {
+		SinkJobImpl sinkJob = new SinkJobImpl();
+		return sinkJob;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RegularSenseJob createRegularSenseJob() {
+		RegularSenseJobImpl regularSenseJob = new RegularSenseJobImpl();
+		return regularSenseJob;
 	}
 
 	/**

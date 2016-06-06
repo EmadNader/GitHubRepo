@@ -69,17 +69,11 @@ public class SennetSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case SennetPackage.WS_NAPP: {
-				WSNapp wsNapp = (WSNapp)theEObject;
-				T result = caseWSNapp(wsNapp);
-				if (result == null) result = caseNamedElement(wsNapp);
-				if (result == null) result = caseIdentifiable(wsNapp);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SennetPackage.LOGICAL_CONDITION: {
-				LogicalCondition logicalCondition = (LogicalCondition)theEObject;
-				T result = caseLogicalCondition(logicalCondition);
+			case SennetPackage.SE_NET_APP: {
+				SeNetApp seNetApp = (SeNetApp)theEObject;
+				T result = caseSeNetApp(seNetApp);
+				if (result == null) result = caseNamedElement(seNetApp);
+				if (result == null) result = caseIdentifiable(seNetApp);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -88,32 +82,17 @@ public class SennetSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>WS Napp</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Se Net App</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>WS Napp</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Se Net App</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseWSNapp(WSNapp object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Logical Condition</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Logical Condition</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLogicalCondition(LogicalCondition object) {
+	public T caseSeNetApp(SeNetApp object) {
 		return null;
 	}
 

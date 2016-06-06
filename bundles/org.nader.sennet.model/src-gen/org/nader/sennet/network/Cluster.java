@@ -5,9 +5,9 @@ package org.nader.sennet.network;
 import org.eclipse.emf.common.util.EList;
 
 import org.nader.sennet.node.AbstractClusterNode;
-import org.nader.sennet.node.ClusterHeadNode;
 
-import org.nader.sennet.toplevelstructure.AbstractResource;
+import org.nader.sennet.sensors.AbstractSensor;
+
 import org.nader.sennet.toplevelstructure.Identifiable;
 
 /**
@@ -18,7 +18,6 @@ import org.nader.sennet.toplevelstructure.Identifiable;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.nader.sennet.network.Cluster#getHead <em>Head</em>}</li>
  *   <li>{@link org.nader.sennet.network.Cluster#getNodes <em>Nodes</em>}</li>
  *   <li>{@link org.nader.sennet.network.Cluster#getResources <em>Resources</em>}</li>
  * </ul>
@@ -29,32 +28,6 @@ import org.nader.sennet.toplevelstructure.Identifiable;
  * @generated
  */
 public interface Cluster extends Identifiable {
-	/**
-	 * Returns the value of the '<em><b>Head</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Head</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Head</em>' containment reference.
-	 * @see #setHead(ClusterHeadNode)
-	 * @see org.nader.sennet.network.NetworkPackage#getCluster_Head()
-	 * @model containment="true"
-	 * @generated
-	 */
-	ClusterHeadNode getHead();
-
-	/**
-	 * Sets the value of the '{@link org.nader.sennet.network.Cluster#getHead <em>Head</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Head</em>' containment reference.
-	 * @see #getHead()
-	 * @generated
-	 */
-	void setHead(ClusterHeadNode value);
-
 	/**
 	 * Returns the value of the '<em><b>Nodes</b></em>' containment reference list.
 	 * The list contents are of type {@link org.nader.sennet.node.AbstractClusterNode}.
@@ -73,7 +46,7 @@ public interface Cluster extends Identifiable {
 
 	/**
 	 * Returns the value of the '<em><b>Resources</b></em>' reference list.
-	 * The list contents are of type {@link org.nader.sennet.toplevelstructure.AbstractResource}.
+	 * The list contents are of type {@link org.nader.sennet.sensors.AbstractSensor}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Resources</em>' reference list isn't clear,
@@ -85,6 +58,6 @@ public interface Cluster extends Identifiable {
 	 * @model
 	 * @generated
 	 */
-	EList<AbstractResource> getResources();
+	EList<AbstractSensor> getResources();
 
 } // Cluster

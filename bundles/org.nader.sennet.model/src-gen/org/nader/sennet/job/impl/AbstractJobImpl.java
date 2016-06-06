@@ -2,14 +2,32 @@
  */
 package org.nader.sennet.job.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.nader.sennet.job.AbstractJob;
 import org.nader.sennet.job.JobPackage;
-import org.nader.sennet.job.actions.AbstractJobAction;
+
+import org.nader.sennet.job.jobaction.AbstratAction;
+
+import org.nader.sennet.job.jobtrigger.AbstractStartEndingJobTrigger;
+
+import org.nader.sennet.network.AbstractNetwork;
+
+import org.nader.sennet.node.AbstractNode;
+
 import org.nader.sennet.toplevelstructure.impl.IdentifiableImpl;
 
 /**
@@ -19,7 +37,10 @@ import org.nader.sennet.toplevelstructure.impl.IdentifiableImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.nader.sennet.job.impl.AbstractJobImpl#getAction <em>Action</em>}</li>
+ *   <li>{@link org.nader.sennet.job.impl.AbstractJobImpl#getJobTargetNode <em>Job Target Node</em>}</li>
+ *   <li>{@link org.nader.sennet.job.impl.AbstractJobImpl#getJobTargetNetwork <em>Job Target Network</em>}</li>
+ *   <li>{@link org.nader.sennet.job.impl.AbstractJobImpl#getStartEndTrigger <em>Start End Trigger</em>}</li>
+ *   <li>{@link org.nader.sennet.job.impl.AbstractJobImpl#getJobaction <em>Jobaction</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,14 +48,44 @@ import org.nader.sennet.toplevelstructure.impl.IdentifiableImpl;
  */
 public abstract class AbstractJobImpl extends IdentifiableImpl implements AbstractJob {
 	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
+	 * The cached value of the '{@link #getJobTargetNode() <em>Job Target Node</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAction()
+	 * @see #getJobTargetNode()
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractJobAction action;
+	protected AbstractNode jobTargetNode;
+
+	/**
+	 * The cached value of the '{@link #getJobTargetNetwork() <em>Job Target Network</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJobTargetNetwork()
+	 * @generated
+	 * @ordered
+	 */
+	protected AbstractNetwork jobTargetNetwork;
+
+	/**
+	 * The cached value of the '{@link #getStartEndTrigger() <em>Start End Trigger</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStartEndTrigger()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AbstractStartEndingJobTrigger> startEndTrigger;
+
+	/**
+	 * The cached value of the '{@link #getJobaction() <em>Jobaction</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJobaction()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AbstratAction> jobaction;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -60,8 +111,8 @@ public abstract class AbstractJobImpl extends IdentifiableImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractJobAction getAction() {
-		return action;
+	public AbstractNode getJobTargetNode() {
+		return jobTargetNode;
 	}
 
 	/**
@@ -69,11 +120,11 @@ public abstract class AbstractJobImpl extends IdentifiableImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAction(AbstractJobAction newAction, NotificationChain msgs) {
-		AbstractJobAction oldAction = action;
-		action = newAction;
+	public NotificationChain basicSetJobTargetNode(AbstractNode newJobTargetNode, NotificationChain msgs) {
+		AbstractNode oldJobTargetNode = jobTargetNode;
+		jobTargetNode = newJobTargetNode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JobPackage.ABSTRACT_JOB__ACTION, oldAction, newAction);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JobPackage.ABSTRACT_JOB__JOB_TARGET_NODE, oldJobTargetNode, newJobTargetNode);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -84,18 +135,85 @@ public abstract class AbstractJobImpl extends IdentifiableImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAction(AbstractJobAction newAction) {
-		if (newAction != action) {
+	public void setJobTargetNode(AbstractNode newJobTargetNode) {
+		if (newJobTargetNode != jobTargetNode) {
 			NotificationChain msgs = null;
-			if (action != null)
-				msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JobPackage.ABSTRACT_JOB__ACTION, null, msgs);
-			if (newAction != null)
-				msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JobPackage.ABSTRACT_JOB__ACTION, null, msgs);
-			msgs = basicSetAction(newAction, msgs);
+			if (jobTargetNode != null)
+				msgs = ((InternalEObject)jobTargetNode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JobPackage.ABSTRACT_JOB__JOB_TARGET_NODE, null, msgs);
+			if (newJobTargetNode != null)
+				msgs = ((InternalEObject)newJobTargetNode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JobPackage.ABSTRACT_JOB__JOB_TARGET_NODE, null, msgs);
+			msgs = basicSetJobTargetNode(newJobTargetNode, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JobPackage.ABSTRACT_JOB__ACTION, newAction, newAction));
+			eNotify(new ENotificationImpl(this, Notification.SET, JobPackage.ABSTRACT_JOB__JOB_TARGET_NODE, newJobTargetNode, newJobTargetNode));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AbstractNetwork getJobTargetNetwork() {
+		return jobTargetNetwork;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetJobTargetNetwork(AbstractNetwork newJobTargetNetwork, NotificationChain msgs) {
+		AbstractNetwork oldJobTargetNetwork = jobTargetNetwork;
+		jobTargetNetwork = newJobTargetNetwork;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JobPackage.ABSTRACT_JOB__JOB_TARGET_NETWORK, oldJobTargetNetwork, newJobTargetNetwork);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setJobTargetNetwork(AbstractNetwork newJobTargetNetwork) {
+		if (newJobTargetNetwork != jobTargetNetwork) {
+			NotificationChain msgs = null;
+			if (jobTargetNetwork != null)
+				msgs = ((InternalEObject)jobTargetNetwork).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JobPackage.ABSTRACT_JOB__JOB_TARGET_NETWORK, null, msgs);
+			if (newJobTargetNetwork != null)
+				msgs = ((InternalEObject)newJobTargetNetwork).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JobPackage.ABSTRACT_JOB__JOB_TARGET_NETWORK, null, msgs);
+			msgs = basicSetJobTargetNetwork(newJobTargetNetwork, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JobPackage.ABSTRACT_JOB__JOB_TARGET_NETWORK, newJobTargetNetwork, newJobTargetNetwork));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<AbstractStartEndingJobTrigger> getStartEndTrigger() {
+		if (startEndTrigger == null) {
+			startEndTrigger = new EObjectContainmentEList<AbstractStartEndingJobTrigger>(AbstractStartEndingJobTrigger.class, this, JobPackage.ABSTRACT_JOB__START_END_TRIGGER);
+		}
+		return startEndTrigger;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<AbstratAction> getJobaction() {
+		if (jobaction == null) {
+			jobaction = new EObjectContainmentEList<AbstratAction>(AbstratAction.class, this, JobPackage.ABSTRACT_JOB__JOBACTION);
+		}
+		return jobaction;
 	}
 
 	/**
@@ -106,8 +224,14 @@ public abstract class AbstractJobImpl extends IdentifiableImpl implements Abstra
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case JobPackage.ABSTRACT_JOB__ACTION:
-				return basicSetAction(null, msgs);
+			case JobPackage.ABSTRACT_JOB__JOB_TARGET_NODE:
+				return basicSetJobTargetNode(null, msgs);
+			case JobPackage.ABSTRACT_JOB__JOB_TARGET_NETWORK:
+				return basicSetJobTargetNetwork(null, msgs);
+			case JobPackage.ABSTRACT_JOB__START_END_TRIGGER:
+				return ((InternalEList<?>)getStartEndTrigger()).basicRemove(otherEnd, msgs);
+			case JobPackage.ABSTRACT_JOB__JOBACTION:
+				return ((InternalEList<?>)getJobaction()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -120,8 +244,14 @@ public abstract class AbstractJobImpl extends IdentifiableImpl implements Abstra
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case JobPackage.ABSTRACT_JOB__ACTION:
-				return getAction();
+			case JobPackage.ABSTRACT_JOB__JOB_TARGET_NODE:
+				return getJobTargetNode();
+			case JobPackage.ABSTRACT_JOB__JOB_TARGET_NETWORK:
+				return getJobTargetNetwork();
+			case JobPackage.ABSTRACT_JOB__START_END_TRIGGER:
+				return getStartEndTrigger();
+			case JobPackage.ABSTRACT_JOB__JOBACTION:
+				return getJobaction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -131,11 +261,23 @@ public abstract class AbstractJobImpl extends IdentifiableImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case JobPackage.ABSTRACT_JOB__ACTION:
-				setAction((AbstractJobAction)newValue);
+			case JobPackage.ABSTRACT_JOB__JOB_TARGET_NODE:
+				setJobTargetNode((AbstractNode)newValue);
+				return;
+			case JobPackage.ABSTRACT_JOB__JOB_TARGET_NETWORK:
+				setJobTargetNetwork((AbstractNetwork)newValue);
+				return;
+			case JobPackage.ABSTRACT_JOB__START_END_TRIGGER:
+				getStartEndTrigger().clear();
+				getStartEndTrigger().addAll((Collection<? extends AbstractStartEndingJobTrigger>)newValue);
+				return;
+			case JobPackage.ABSTRACT_JOB__JOBACTION:
+				getJobaction().clear();
+				getJobaction().addAll((Collection<? extends AbstratAction>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -149,8 +291,17 @@ public abstract class AbstractJobImpl extends IdentifiableImpl implements Abstra
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case JobPackage.ABSTRACT_JOB__ACTION:
-				setAction((AbstractJobAction)null);
+			case JobPackage.ABSTRACT_JOB__JOB_TARGET_NODE:
+				setJobTargetNode((AbstractNode)null);
+				return;
+			case JobPackage.ABSTRACT_JOB__JOB_TARGET_NETWORK:
+				setJobTargetNetwork((AbstractNetwork)null);
+				return;
+			case JobPackage.ABSTRACT_JOB__START_END_TRIGGER:
+				getStartEndTrigger().clear();
+				return;
+			case JobPackage.ABSTRACT_JOB__JOBACTION:
+				getJobaction().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -164,8 +315,14 @@ public abstract class AbstractJobImpl extends IdentifiableImpl implements Abstra
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case JobPackage.ABSTRACT_JOB__ACTION:
-				return action != null;
+			case JobPackage.ABSTRACT_JOB__JOB_TARGET_NODE:
+				return jobTargetNode != null;
+			case JobPackage.ABSTRACT_JOB__JOB_TARGET_NETWORK:
+				return jobTargetNetwork != null;
+			case JobPackage.ABSTRACT_JOB__START_END_TRIGGER:
+				return startEndTrigger != null && !startEndTrigger.isEmpty();
+			case JobPackage.ABSTRACT_JOB__JOBACTION:
+				return jobaction != null && !jobaction.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

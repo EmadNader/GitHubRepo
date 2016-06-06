@@ -74,20 +74,28 @@ public class JobAdapterFactory extends AdapterFactoryImpl {
 				return createAbstractJobAdapter();
 			}
 			@Override
-			public Adapter caseContinuousJob(ContinuousJob object) {
-				return createContinuousJobAdapter();
+			public Adapter caseSenseForwardJob(SenseForwardJob object) {
+				return createSenseForwardJobAdapter();
 			}
 			@Override
-			public Adapter caseEventDrivenJob(EventDrivenJob object) {
-				return createEventDrivenJobAdapter();
+			public Adapter caseAggregationJob(AggregationJob object) {
+				return createAggregationJobAdapter();
 			}
 			@Override
-			public Adapter casePeriodicJob(PeriodicJob object) {
-				return createPeriodicJobAdapter();
+			public Adapter caseFusionJob(FusionJob object) {
+				return createFusionJobAdapter();
 			}
 			@Override
-			public Adapter caseRequestReplayJob(RequestReplayJob object) {
-				return createRequestReplayJobAdapter();
+			public Adapter caseSenseNowJob(SenseNowJob object) {
+				return createSenseNowJobAdapter();
+			}
+			@Override
+			public Adapter caseSinkJob(SinkJob object) {
+				return createSinkJobAdapter();
+			}
+			@Override
+			public Adapter caseRegularSenseJob(RegularSenseJob object) {
+				return createRegularSenseJobAdapter();
 			}
 			@Override
 			public Adapter caseIdentifiable(Identifiable object) {
@@ -128,58 +136,86 @@ public class JobAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nader.sennet.job.ContinuousJob <em>Continuous Job</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nader.sennet.job.SenseForwardJob <em>Sense Forward Job</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nader.sennet.job.ContinuousJob
+	 * @see org.nader.sennet.job.SenseForwardJob
 	 * @generated
 	 */
-	public Adapter createContinuousJobAdapter() {
+	public Adapter createSenseForwardJobAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nader.sennet.job.EventDrivenJob <em>Event Driven Job</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nader.sennet.job.AggregationJob <em>Aggregation Job</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nader.sennet.job.EventDrivenJob
+	 * @see org.nader.sennet.job.AggregationJob
 	 * @generated
 	 */
-	public Adapter createEventDrivenJobAdapter() {
+	public Adapter createAggregationJobAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nader.sennet.job.PeriodicJob <em>Periodic Job</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nader.sennet.job.FusionJob <em>Fusion Job</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nader.sennet.job.PeriodicJob
+	 * @see org.nader.sennet.job.FusionJob
 	 * @generated
 	 */
-	public Adapter createPeriodicJobAdapter() {
+	public Adapter createFusionJobAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nader.sennet.job.RequestReplayJob <em>Request Replay Job</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nader.sennet.job.SenseNowJob <em>Sense Now Job</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nader.sennet.job.RequestReplayJob
+	 * @see org.nader.sennet.job.SenseNowJob
 	 * @generated
 	 */
-	public Adapter createRequestReplayJobAdapter() {
+	public Adapter createSenseNowJobAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nader.sennet.job.SinkJob <em>Sink Job</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nader.sennet.job.SinkJob
+	 * @generated
+	 */
+	public Adapter createSinkJobAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nader.sennet.job.RegularSenseJob <em>Regular Sense Job</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nader.sennet.job.RegularSenseJob
+	 * @generated
+	 */
+	public Adapter createRegularSenseJobAdapter() {
 		return null;
 	}
 

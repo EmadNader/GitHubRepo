@@ -18,16 +18,22 @@ import org.nader.sennet.enums.impl.EnumsPackageImpl;
 import org.nader.sennet.impl.SennetPackageImpl;
 
 import org.nader.sennet.job.AbstractJob;
-import org.nader.sennet.job.ContinuousJob;
-import org.nader.sennet.job.EventDrivenJob;
+import org.nader.sennet.job.AggregationJob;
+import org.nader.sennet.job.FusionJob;
 import org.nader.sennet.job.JobFactory;
 import org.nader.sennet.job.JobPackage;
-import org.nader.sennet.job.PeriodicJob;
-import org.nader.sennet.job.RequestReplayJob;
+import org.nader.sennet.job.RegularSenseJob;
+import org.nader.sennet.job.SenseForwardJob;
+import org.nader.sennet.job.SenseNowJob;
+import org.nader.sennet.job.SinkJob;
 
-import org.nader.sennet.job.actions.ActionsPackage;
+import org.nader.sennet.job.jobaction.JobactionPackage;
 
-import org.nader.sennet.job.actions.impl.ActionsPackageImpl;
+import org.nader.sennet.job.jobaction.impl.JobactionPackageImpl;
+
+import org.nader.sennet.job.jobtrigger.JobtriggerPackage;
+
+import org.nader.sennet.job.jobtrigger.impl.JobtriggerPackageImpl;
 
 import org.nader.sennet.network.NetworkPackage;
 
@@ -37,13 +43,9 @@ import org.nader.sennet.node.NodePackage;
 
 import org.nader.sennet.node.impl.NodePackageImpl;
 
-import org.nader.sennet.port.PortPackage;
+import org.nader.sennet.sensors.SensorsPackage;
 
-import org.nader.sennet.port.impl.PortPackageImpl;
-
-import org.nader.sennet.sensor.SensorPackage;
-
-import org.nader.sennet.sensor.impl.SensorPackageImpl;
+import org.nader.sennet.sensors.impl.SensorsPackageImpl;
 
 import org.nader.sennet.toplevelstructure.ToplevelstructurePackage;
 
@@ -68,28 +70,42 @@ public class JobPackageImpl extends EPackageImpl implements JobPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass continuousJobEClass = null;
+	private EClass senseForwardJobEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass eventDrivenJobEClass = null;
+	private EClass aggregationJobEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass periodicJobEClass = null;
+	private EClass fusionJobEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass requestReplayJobEClass = null;
+	private EClass senseNowJobEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sinkJobEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass regularSenseJobEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -139,35 +155,35 @@ public class JobPackageImpl extends EPackageImpl implements JobPackage {
 
 		// Obtain or create and register interdependencies
 		SennetPackageImpl theSennetPackage = (SennetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SennetPackage.eNS_URI) instanceof SennetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SennetPackage.eNS_URI) : SennetPackage.eINSTANCE);
-		ToplevelstructurePackageImpl theToplevelstructurePackage = (ToplevelstructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ToplevelstructurePackage.eNS_URI) instanceof ToplevelstructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ToplevelstructurePackage.eNS_URI) : ToplevelstructurePackage.eINSTANCE);
 		EnumsPackageImpl theEnumsPackage = (EnumsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnumsPackage.eNS_URI) instanceof EnumsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnumsPackage.eNS_URI) : EnumsPackage.eINSTANCE);
+		ToplevelstructurePackageImpl theToplevelstructurePackage = (ToplevelstructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ToplevelstructurePackage.eNS_URI) instanceof ToplevelstructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ToplevelstructurePackage.eNS_URI) : ToplevelstructurePackage.eINSTANCE);
 		NodePackageImpl theNodePackage = (NodePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NodePackage.eNS_URI) instanceof NodePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NodePackage.eNS_URI) : NodePackage.eINSTANCE);
-		ActionsPackageImpl theActionsPackage = (ActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActionsPackage.eNS_URI) instanceof ActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActionsPackage.eNS_URI) : ActionsPackage.eINSTANCE);
-		SensorPackageImpl theSensorPackage = (SensorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SensorPackage.eNS_URI) instanceof SensorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SensorPackage.eNS_URI) : SensorPackage.eINSTANCE);
-		PortPackageImpl thePortPackage = (PortPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortPackage.eNS_URI) instanceof PortPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortPackage.eNS_URI) : PortPackage.eINSTANCE);
+		SensorsPackageImpl theSensorsPackage = (SensorsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SensorsPackage.eNS_URI) instanceof SensorsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SensorsPackage.eNS_URI) : SensorsPackage.eINSTANCE);
 		NetworkPackageImpl theNetworkPackage = (NetworkPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) instanceof NetworkPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) : NetworkPackage.eINSTANCE);
+		JobtriggerPackageImpl theJobtriggerPackage = (JobtriggerPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(JobtriggerPackage.eNS_URI) instanceof JobtriggerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(JobtriggerPackage.eNS_URI) : JobtriggerPackage.eINSTANCE);
+		JobactionPackageImpl theJobactionPackage = (JobactionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(JobactionPackage.eNS_URI) instanceof JobactionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(JobactionPackage.eNS_URI) : JobactionPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theJobPackage.createPackageContents();
 		theSennetPackage.createPackageContents();
-		theToplevelstructurePackage.createPackageContents();
 		theEnumsPackage.createPackageContents();
+		theToplevelstructurePackage.createPackageContents();
 		theNodePackage.createPackageContents();
-		theActionsPackage.createPackageContents();
-		theSensorPackage.createPackageContents();
-		thePortPackage.createPackageContents();
+		theSensorsPackage.createPackageContents();
 		theNetworkPackage.createPackageContents();
+		theJobtriggerPackage.createPackageContents();
+		theJobactionPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theJobPackage.initializePackageContents();
 		theSennetPackage.initializePackageContents();
-		theToplevelstructurePackage.initializePackageContents();
 		theEnumsPackage.initializePackageContents();
+		theToplevelstructurePackage.initializePackageContents();
 		theNodePackage.initializePackageContents();
-		theActionsPackage.initializePackageContents();
-		theSensorPackage.initializePackageContents();
-		thePortPackage.initializePackageContents();
+		theSensorsPackage.initializePackageContents();
 		theNetworkPackage.initializePackageContents();
+		theJobtriggerPackage.initializePackageContents();
+		theJobactionPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theJobPackage.freeze();
@@ -192,7 +208,7 @@ public class JobPackageImpl extends EPackageImpl implements JobPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractJob_Action() {
+	public EReference getAbstractJob_JobTargetNode() {
 		return (EReference)abstractJobEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -201,8 +217,8 @@ public class JobPackageImpl extends EPackageImpl implements JobPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getContinuousJob() {
-		return continuousJobEClass;
+	public EReference getAbstractJob_JobTargetNetwork() {
+		return (EReference)abstractJobEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -210,8 +226,8 @@ public class JobPackageImpl extends EPackageImpl implements JobPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEventDrivenJob() {
-		return eventDrivenJobEClass;
+	public EReference getAbstractJob_StartEndTrigger() {
+		return (EReference)abstractJobEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -219,8 +235,8 @@ public class JobPackageImpl extends EPackageImpl implements JobPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEventDrivenJob_EventCondition() {
-		return (EReference)eventDrivenJobEClass.getEStructuralFeatures().get(0);
+	public EReference getAbstractJob_Jobaction() {
+		return (EReference)abstractJobEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -228,8 +244,8 @@ public class JobPackageImpl extends EPackageImpl implements JobPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPeriodicJob() {
-		return periodicJobEClass;
+	public EClass getSenseForwardJob() {
+		return senseForwardJobEClass;
 	}
 
 	/**
@@ -237,8 +253,8 @@ public class JobPackageImpl extends EPackageImpl implements JobPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPeriodicJob_Timer() {
-		return (EAttribute)periodicJobEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSenseForwardJob_SensingThreshold() {
+		return (EAttribute)senseForwardJobEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -246,8 +262,71 @@ public class JobPackageImpl extends EPackageImpl implements JobPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRequestReplayJob() {
-		return requestReplayJobEClass;
+	public EClass getAggregationJob() {
+		return aggregationJobEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAggregationJob_Aggregation() {
+		return (EAttribute)aggregationJobEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFusionJob() {
+		return fusionJobEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFusionJob_Fusion() {
+		return (EAttribute)fusionJobEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSenseNowJob() {
+		return senseNowJobEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSinkJob() {
+		return sinkJobEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRegularSenseJob() {
+		return regularSenseJobEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRegularSenseJob_SensingThreshold() {
+		return (EAttribute)regularSenseJobEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -279,17 +358,26 @@ public class JobPackageImpl extends EPackageImpl implements JobPackage {
 
 		// Create classes and their features
 		abstractJobEClass = createEClass(ABSTRACT_JOB);
-		createEReference(abstractJobEClass, ABSTRACT_JOB__ACTION);
+		createEReference(abstractJobEClass, ABSTRACT_JOB__JOB_TARGET_NODE);
+		createEReference(abstractJobEClass, ABSTRACT_JOB__JOB_TARGET_NETWORK);
+		createEReference(abstractJobEClass, ABSTRACT_JOB__START_END_TRIGGER);
+		createEReference(abstractJobEClass, ABSTRACT_JOB__JOBACTION);
 
-		continuousJobEClass = createEClass(CONTINUOUS_JOB);
+		senseForwardJobEClass = createEClass(SENSE_FORWARD_JOB);
+		createEAttribute(senseForwardJobEClass, SENSE_FORWARD_JOB__SENSING_THRESHOLD);
 
-		eventDrivenJobEClass = createEClass(EVENT_DRIVEN_JOB);
-		createEReference(eventDrivenJobEClass, EVENT_DRIVEN_JOB__EVENT_CONDITION);
+		aggregationJobEClass = createEClass(AGGREGATION_JOB);
+		createEAttribute(aggregationJobEClass, AGGREGATION_JOB__AGGREGATION);
 
-		periodicJobEClass = createEClass(PERIODIC_JOB);
-		createEAttribute(periodicJobEClass, PERIODIC_JOB__TIMER);
+		fusionJobEClass = createEClass(FUSION_JOB);
+		createEAttribute(fusionJobEClass, FUSION_JOB__FUSION);
 
-		requestReplayJobEClass = createEClass(REQUEST_REPLAY_JOB);
+		senseNowJobEClass = createEClass(SENSE_NOW_JOB);
+
+		sinkJobEClass = createEClass(SINK_JOB);
+
+		regularSenseJobEClass = createEClass(REGULAR_SENSE_JOB);
+		createEAttribute(regularSenseJobEClass, REGULAR_SENSE_JOB__SENSING_THRESHOLD);
 	}
 
 	/**
@@ -316,12 +404,16 @@ public class JobPackageImpl extends EPackageImpl implements JobPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ActionsPackage theActionsPackage = (ActionsPackage)EPackage.Registry.INSTANCE.getEPackage(ActionsPackage.eNS_URI);
+		JobtriggerPackage theJobtriggerPackage = (JobtriggerPackage)EPackage.Registry.INSTANCE.getEPackage(JobtriggerPackage.eNS_URI);
+		JobactionPackage theJobactionPackage = (JobactionPackage)EPackage.Registry.INSTANCE.getEPackage(JobactionPackage.eNS_URI);
 		ToplevelstructurePackage theToplevelstructurePackage = (ToplevelstructurePackage)EPackage.Registry.INSTANCE.getEPackage(ToplevelstructurePackage.eNS_URI);
-		SennetPackage theSennetPackage = (SennetPackage)EPackage.Registry.INSTANCE.getEPackage(SennetPackage.eNS_URI);
+		NodePackage theNodePackage = (NodePackage)EPackage.Registry.INSTANCE.getEPackage(NodePackage.eNS_URI);
+		NetworkPackage theNetworkPackage = (NetworkPackage)EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI);
+		EnumsPackage theEnumsPackage = (EnumsPackage)EPackage.Registry.INSTANCE.getEPackage(EnumsPackage.eNS_URI);
 
 		// Add subpackages
-		getESubpackages().add(theActionsPackage);
+		getESubpackages().add(theJobtriggerPackage);
+		getESubpackages().add(theJobactionPackage);
 
 		// Create type parameters
 
@@ -329,24 +421,35 @@ public class JobPackageImpl extends EPackageImpl implements JobPackage {
 
 		// Add supertypes to classes
 		abstractJobEClass.getESuperTypes().add(theToplevelstructurePackage.getIdentifiable());
-		continuousJobEClass.getESuperTypes().add(this.getAbstractJob());
-		eventDrivenJobEClass.getESuperTypes().add(this.getAbstractJob());
-		periodicJobEClass.getESuperTypes().add(this.getAbstractJob());
-		requestReplayJobEClass.getESuperTypes().add(this.getAbstractJob());
+		senseForwardJobEClass.getESuperTypes().add(this.getAbstractJob());
+		aggregationJobEClass.getESuperTypes().add(this.getAbstractJob());
+		fusionJobEClass.getESuperTypes().add(this.getAbstractJob());
+		senseNowJobEClass.getESuperTypes().add(this.getAbstractJob());
+		sinkJobEClass.getESuperTypes().add(this.getAbstractJob());
+		regularSenseJobEClass.getESuperTypes().add(this.getAbstractJob());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(abstractJobEClass, AbstractJob.class, "AbstractJob", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAbstractJob_Action(), theActionsPackage.getAbstractJobAction(), null, "action", null, 0, 1, AbstractJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractJob_JobTargetNode(), theNodePackage.getAbstractNode(), null, "JobTargetNode", null, 0, 1, AbstractJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractJob_JobTargetNetwork(), theNetworkPackage.getAbstractNetwork(), null, "JobTargetNetwork", null, 0, 1, AbstractJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractJob_StartEndTrigger(), theJobtriggerPackage.getAbstractStartEndingJobTrigger(), null, "startEndTrigger", null, 0, -1, AbstractJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractJob_Jobaction(), theJobactionPackage.getAbstratAction(), null, "jobaction", null, 0, -1, AbstractJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(continuousJobEClass, ContinuousJob.class, "ContinuousJob", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(senseForwardJobEClass, SenseForwardJob.class, "SenseForwardJob", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSenseForwardJob_SensingThreshold(), ecorePackage.getELong(), "sensingThreshold", null, 0, 1, SenseForwardJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eventDrivenJobEClass, EventDrivenJob.class, "EventDrivenJob", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEventDrivenJob_EventCondition(), theSennetPackage.getLogicalCondition(), null, "eventCondition", null, 0, 1, EventDrivenJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(aggregationJobEClass, AggregationJob.class, "AggregationJob", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAggregationJob_Aggregation(), theEnumsPackage.getAggregation(), "aggregation", null, 0, 1, AggregationJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(periodicJobEClass, PeriodicJob.class, "PeriodicJob", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPeriodicJob_Timer(), ecorePackage.getELong(), "timer", null, 0, 1, PeriodicJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(fusionJobEClass, FusionJob.class, "FusionJob", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFusionJob_Fusion(), theEnumsPackage.getFusion(), "fusion", null, 0, 1, FusionJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(requestReplayJobEClass, RequestReplayJob.class, "RequestReplayJob", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(senseNowJobEClass, SenseNowJob.class, "SenseNowJob", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(sinkJobEClass, SinkJob.class, "SinkJob", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(regularSenseJobEClass, RegularSenseJob.class, "RegularSenseJob", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRegularSenseJob_SensingThreshold(), ecorePackage.getELong(), "sensingThreshold", null, 0, 1, RegularSenseJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //JobPackageImpl

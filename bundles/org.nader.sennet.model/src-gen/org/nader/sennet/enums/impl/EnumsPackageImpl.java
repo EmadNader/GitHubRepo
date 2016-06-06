@@ -14,7 +14,8 @@ import org.nader.sennet.enums.EnumsFactory;
 import org.nader.sennet.enums.EnumsPackage;
 import org.nader.sennet.enums.Fusion;
 import org.nader.sennet.enums.InterNodeComm;
-import org.nader.sennet.enums.JobSchedule;
+import org.nader.sennet.enums.LedStatus;
+import org.nader.sennet.enums.Leds;
 import org.nader.sennet.enums.LogicalSymbol;
 import org.nader.sennet.enums.Position;
 import org.nader.sennet.enums.RoutingProtocol;
@@ -23,11 +24,15 @@ import org.nader.sennet.impl.SennetPackageImpl;
 
 import org.nader.sennet.job.JobPackage;
 
-import org.nader.sennet.job.actions.ActionsPackage;
-
-import org.nader.sennet.job.actions.impl.ActionsPackageImpl;
-
 import org.nader.sennet.job.impl.JobPackageImpl;
+
+import org.nader.sennet.job.jobaction.JobactionPackage;
+
+import org.nader.sennet.job.jobaction.impl.JobactionPackageImpl;
+
+import org.nader.sennet.job.jobtrigger.JobtriggerPackage;
+
+import org.nader.sennet.job.jobtrigger.impl.JobtriggerPackageImpl;
 
 import org.nader.sennet.network.NetworkPackage;
 
@@ -37,13 +42,9 @@ import org.nader.sennet.node.NodePackage;
 
 import org.nader.sennet.node.impl.NodePackageImpl;
 
-import org.nader.sennet.port.PortPackage;
+import org.nader.sennet.sensors.SensorsPackage;
 
-import org.nader.sennet.port.impl.PortPackageImpl;
-
-import org.nader.sennet.sensor.SensorPackage;
-
-import org.nader.sennet.sensor.impl.SensorPackageImpl;
+import org.nader.sennet.sensors.impl.SensorsPackageImpl;
 
 import org.nader.sennet.toplevelstructure.ToplevelstructurePackage;
 
@@ -96,14 +97,21 @@ public class EnumsPackageImpl extends EPackageImpl implements EnumsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum jobScheduleEEnum = null;
+	private EEnum logicalSymbolEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum logicalSymbolEEnum = null;
+	private EEnum ledsEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum ledStatusEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -155,33 +163,33 @@ public class EnumsPackageImpl extends EPackageImpl implements EnumsPackage {
 		SennetPackageImpl theSennetPackage = (SennetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SennetPackage.eNS_URI) instanceof SennetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SennetPackage.eNS_URI) : SennetPackage.eINSTANCE);
 		ToplevelstructurePackageImpl theToplevelstructurePackage = (ToplevelstructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ToplevelstructurePackage.eNS_URI) instanceof ToplevelstructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ToplevelstructurePackage.eNS_URI) : ToplevelstructurePackage.eINSTANCE);
 		NodePackageImpl theNodePackage = (NodePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NodePackage.eNS_URI) instanceof NodePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NodePackage.eNS_URI) : NodePackage.eINSTANCE);
-		JobPackageImpl theJobPackage = (JobPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(JobPackage.eNS_URI) instanceof JobPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(JobPackage.eNS_URI) : JobPackage.eINSTANCE);
-		ActionsPackageImpl theActionsPackage = (ActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActionsPackage.eNS_URI) instanceof ActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActionsPackage.eNS_URI) : ActionsPackage.eINSTANCE);
-		SensorPackageImpl theSensorPackage = (SensorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SensorPackage.eNS_URI) instanceof SensorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SensorPackage.eNS_URI) : SensorPackage.eINSTANCE);
-		PortPackageImpl thePortPackage = (PortPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortPackage.eNS_URI) instanceof PortPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortPackage.eNS_URI) : PortPackage.eINSTANCE);
+		SensorsPackageImpl theSensorsPackage = (SensorsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SensorsPackage.eNS_URI) instanceof SensorsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SensorsPackage.eNS_URI) : SensorsPackage.eINSTANCE);
 		NetworkPackageImpl theNetworkPackage = (NetworkPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) instanceof NetworkPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) : NetworkPackage.eINSTANCE);
+		JobPackageImpl theJobPackage = (JobPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(JobPackage.eNS_URI) instanceof JobPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(JobPackage.eNS_URI) : JobPackage.eINSTANCE);
+		JobtriggerPackageImpl theJobtriggerPackage = (JobtriggerPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(JobtriggerPackage.eNS_URI) instanceof JobtriggerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(JobtriggerPackage.eNS_URI) : JobtriggerPackage.eINSTANCE);
+		JobactionPackageImpl theJobactionPackage = (JobactionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(JobactionPackage.eNS_URI) instanceof JobactionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(JobactionPackage.eNS_URI) : JobactionPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theEnumsPackage.createPackageContents();
 		theSennetPackage.createPackageContents();
 		theToplevelstructurePackage.createPackageContents();
 		theNodePackage.createPackageContents();
-		theJobPackage.createPackageContents();
-		theActionsPackage.createPackageContents();
-		theSensorPackage.createPackageContents();
-		thePortPackage.createPackageContents();
+		theSensorsPackage.createPackageContents();
 		theNetworkPackage.createPackageContents();
+		theJobPackage.createPackageContents();
+		theJobtriggerPackage.createPackageContents();
+		theJobactionPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theEnumsPackage.initializePackageContents();
 		theSennetPackage.initializePackageContents();
 		theToplevelstructurePackage.initializePackageContents();
 		theNodePackage.initializePackageContents();
-		theJobPackage.initializePackageContents();
-		theActionsPackage.initializePackageContents();
-		theSensorPackage.initializePackageContents();
-		thePortPackage.initializePackageContents();
+		theSensorsPackage.initializePackageContents();
 		theNetworkPackage.initializePackageContents();
+		theJobPackage.initializePackageContents();
+		theJobtriggerPackage.initializePackageContents();
+		theJobactionPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theEnumsPackage.freeze();
@@ -242,8 +250,8 @@ public class EnumsPackageImpl extends EPackageImpl implements EnumsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getJobSchedule() {
-		return jobScheduleEEnum;
+	public EEnum getLogicalSymbol() {
+		return logicalSymbolEEnum;
 	}
 
 	/**
@@ -251,8 +259,17 @@ public class EnumsPackageImpl extends EPackageImpl implements EnumsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getLogicalSymbol() {
-		return logicalSymbolEEnum;
+	public EEnum getLeds() {
+		return ledsEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getLedStatus() {
+		return ledStatusEEnum;
 	}
 
 	/**
@@ -288,8 +305,9 @@ public class EnumsPackageImpl extends EPackageImpl implements EnumsPackage {
 		positionEEnum = createEEnum(POSITION);
 		routingProtocolEEnum = createEEnum(ROUTING_PROTOCOL);
 		interNodeCommEEnum = createEEnum(INTER_NODE_COMM);
-		jobScheduleEEnum = createEEnum(JOB_SCHEDULE);
 		logicalSymbolEEnum = createEEnum(LOGICAL_SYMBOL);
+		ledsEEnum = createEEnum(LEDS);
+		ledStatusEEnum = createEEnum(LED_STATUS);
 	}
 
 	/**
@@ -351,6 +369,9 @@ public class EnumsPackageImpl extends EPackageImpl implements EnumsPackage {
 		addEEnumLiteral(routingProtocolEEnum, RoutingProtocol.PEGASIS);
 		addEEnumLiteral(routingProtocolEEnum, RoutingProtocol.TEEN);
 		addEEnumLiteral(routingProtocolEEnum, RoutingProtocol.SPEED);
+		addEEnumLiteral(routingProtocolEEnum, RoutingProtocol.CTP);
+		addEEnumLiteral(routingProtocolEEnum, RoutingProtocol.DISMENTATION);
+		addEEnumLiteral(routingProtocolEEnum, RoutingProtocol.ACTIVE_MESSAGE);
 
 		initEEnum(interNodeCommEEnum, InterNodeComm.class, "InterNodeComm");
 		addEEnumLiteral(interNodeCommEEnum, InterNodeComm.BT);
@@ -358,17 +379,23 @@ public class EnumsPackageImpl extends EPackageImpl implements EnumsPackage {
 		addEEnumLiteral(interNodeCommEEnum, InterNodeComm.WLAN);
 		addEEnumLiteral(interNodeCommEEnum, InterNodeComm.RF);
 
-		initEEnum(jobScheduleEEnum, JobSchedule.class, "JobSchedule");
-		addEEnumLiteral(jobScheduleEEnum, JobSchedule.START);
-		addEEnumLiteral(jobScheduleEEnum, JobSchedule.STOP);
-
 		initEEnum(logicalSymbolEEnum, LogicalSymbol.class, "LogicalSymbol");
 		addEEnumLiteral(logicalSymbolEEnum, LogicalSymbol.EQUAL);
 		addEEnumLiteral(logicalSymbolEEnum, LogicalSymbol.GREATER_THAN);
 		addEEnumLiteral(logicalSymbolEEnum, LogicalSymbol.GREATER_OR_EQUAL_THAN);
 		addEEnumLiteral(logicalSymbolEEnum, LogicalSymbol.LESS_THAN);
 		addEEnumLiteral(logicalSymbolEEnum, LogicalSymbol.LESS_OR_EQUAL_THAN);
-		addEEnumLiteral(logicalSymbolEEnum, LogicalSymbol.NOT);
+		addEEnumLiteral(logicalSymbolEEnum, LogicalSymbol.NOT_EQUAL);
+
+		initEEnum(ledsEEnum, Leds.class, "Leds");
+		addEEnumLiteral(ledsEEnum, Leds.LED0);
+		addEEnumLiteral(ledsEEnum, Leds.LED1);
+		addEEnumLiteral(ledsEEnum, Leds.LED2);
+
+		initEEnum(ledStatusEEnum, LedStatus.class, "LedStatus");
+		addEEnumLiteral(ledStatusEEnum, LedStatus.ON);
+		addEEnumLiteral(ledStatusEEnum, LedStatus.OFF);
+		addEEnumLiteral(ledStatusEEnum, LedStatus.TOGGLE);
 	}
 
 } //EnumsPackageImpl

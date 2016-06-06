@@ -40,7 +40,7 @@ public interface NetworkPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.nader.org/sennet/nt";
+	String eNS_URI = "http://www.nader.org/sennet/net";
 
 	/**
 	 * The package namespace name.
@@ -48,7 +48,7 @@ public interface NetworkPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "nt";
+	String eNS_PREFIX = "net";
 
 	/**
 	 * The singleton instance of the package.
@@ -105,31 +105,22 @@ public interface NetworkPackage extends EPackage {
 	int ABSTRACT_NETWORK__ROUTING_PROTOCOL = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Sink</b></em>' reference.
+	 * The feature id for the '<em><b>Resources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_NETWORK__SINK = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 3;
+	int ABSTRACT_NETWORK__RESOURCES = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Sensors</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Sink</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_NETWORK__SENSORS = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_NETWORK__PORTS = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 5;
+	int ABSTRACT_NETWORK__SINK = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Network</em>' class.
@@ -138,7 +129,7 @@ public interface NetworkPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_NETWORK_FEATURE_COUNT = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 6;
+	int ABSTRACT_NETWORK_FEATURE_COUNT = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Abstract Network</em>' class.
@@ -196,31 +187,22 @@ public interface NetworkPackage extends EPackage {
 	int FLAT_NETWORK__ROUTING_PROTOCOL = ABSTRACT_NETWORK__ROUTING_PROTOCOL;
 
 	/**
-	 * The feature id for the '<em><b>Sink</b></em>' reference.
+	 * The feature id for the '<em><b>Resources</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLAT_NETWORK__RESOURCES = ABSTRACT_NETWORK__RESOURCES;
+
+	/**
+	 * The feature id for the '<em><b>Sink</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int FLAT_NETWORK__SINK = ABSTRACT_NETWORK__SINK;
-
-	/**
-	 * The feature id for the '<em><b>Sensors</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLAT_NETWORK__SENSORS = ABSTRACT_NETWORK__SENSORS;
-
-	/**
-	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLAT_NETWORK__PORTS = ABSTRACT_NETWORK__PORTS;
 
 	/**
 	 * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
@@ -296,31 +278,22 @@ public interface NetworkPackage extends EPackage {
 	int CLUSTERED_NETWORK__ROUTING_PROTOCOL = ABSTRACT_NETWORK__ROUTING_PROTOCOL;
 
 	/**
-	 * The feature id for the '<em><b>Sink</b></em>' reference.
+	 * The feature id for the '<em><b>Resources</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLUSTERED_NETWORK__RESOURCES = ABSTRACT_NETWORK__RESOURCES;
+
+	/**
+	 * The feature id for the '<em><b>Sink</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int CLUSTERED_NETWORK__SINK = ABSTRACT_NETWORK__SINK;
-
-	/**
-	 * The feature id for the '<em><b>Sensors</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLUSTERED_NETWORK__SENSORS = ABSTRACT_NETWORK__SENSORS;
-
-	/**
-	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLUSTERED_NETWORK__PORTS = ABSTRACT_NETWORK__PORTS;
 
 	/**
 	 * The feature id for the '<em><b>Clusters</b></em>' containment reference list.
@@ -369,22 +342,13 @@ public interface NetworkPackage extends EPackage {
 	int CLUSTER__ID = ToplevelstructurePackage.IDENTIFIABLE__ID;
 
 	/**
-	 * The feature id for the '<em><b>Head</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLUSTER__HEAD = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTER__NODES = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 1;
+	int CLUSTER__NODES = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Resources</b></em>' reference list.
@@ -393,7 +357,7 @@ public interface NetworkPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTER__RESOURCES = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 2;
+	int CLUSTER__RESOURCES = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Cluster</em>' class.
@@ -402,7 +366,7 @@ public interface NetworkPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTER_FEATURE_COUNT = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 3;
+	int CLUSTER_FEATURE_COUNT = ToplevelstructurePackage.IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Cluster</em>' class.
@@ -458,37 +422,26 @@ public interface NetworkPackage extends EPackage {
 	EAttribute getAbstractNetwork_RoutingProtocol();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.nader.sennet.network.AbstractNetwork#getSink <em>Sink</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.nader.sennet.network.AbstractNetwork#getResources <em>Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Sink</em>'.
+	 * @return the meta object for the containment reference list '<em>Resources</em>'.
+	 * @see org.nader.sennet.network.AbstractNetwork#getResources()
+	 * @see #getAbstractNetwork()
+	 * @generated
+	 */
+	EReference getAbstractNetwork_Resources();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.nader.sennet.network.AbstractNetwork#getSink <em>Sink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Sink</em>'.
 	 * @see org.nader.sennet.network.AbstractNetwork#getSink()
 	 * @see #getAbstractNetwork()
 	 * @generated
 	 */
 	EReference getAbstractNetwork_Sink();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.nader.sennet.network.AbstractNetwork#getSensors <em>Sensors</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Sensors</em>'.
-	 * @see org.nader.sennet.network.AbstractNetwork#getSensors()
-	 * @see #getAbstractNetwork()
-	 * @generated
-	 */
-	EReference getAbstractNetwork_Sensors();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.nader.sennet.network.AbstractNetwork#getPorts <em>Ports</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Ports</em>'.
-	 * @see org.nader.sennet.network.AbstractNetwork#getPorts()
-	 * @see #getAbstractNetwork()
-	 * @generated
-	 */
-	EReference getAbstractNetwork_Ports();
 
 	/**
 	 * Returns the meta object for class '{@link org.nader.sennet.network.FlatNetwork <em>Flat Network</em>}'.
@@ -541,17 +494,6 @@ public interface NetworkPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCluster();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.nader.sennet.network.Cluster#getHead <em>Head</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Head</em>'.
-	 * @see org.nader.sennet.network.Cluster#getHead()
-	 * @see #getCluster()
-	 * @generated
-	 */
-	EReference getCluster_Head();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.nader.sennet.network.Cluster#getNodes <em>Nodes</em>}'.
@@ -633,28 +575,20 @@ public interface NetworkPackage extends EPackage {
 		EAttribute ABSTRACT_NETWORK__ROUTING_PROTOCOL = eINSTANCE.getAbstractNetwork_RoutingProtocol();
 
 		/**
-		 * The meta object literal for the '<em><b>Sink</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Resources</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_NETWORK__RESOURCES = eINSTANCE.getAbstractNetwork_Resources();
+
+		/**
+		 * The meta object literal for the '<em><b>Sink</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ABSTRACT_NETWORK__SINK = eINSTANCE.getAbstractNetwork_Sink();
-
-		/**
-		 * The meta object literal for the '<em><b>Sensors</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ABSTRACT_NETWORK__SENSORS = eINSTANCE.getAbstractNetwork_Sensors();
-
-		/**
-		 * The meta object literal for the '<em><b>Ports</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ABSTRACT_NETWORK__PORTS = eINSTANCE.getAbstractNetwork_Ports();
 
 		/**
 		 * The meta object literal for the '{@link org.nader.sennet.network.impl.FlatNetworkImpl <em>Flat Network</em>}' class.
@@ -701,14 +635,6 @@ public interface NetworkPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CLUSTER = eINSTANCE.getCluster();
-
-		/**
-		 * The meta object literal for the '<em><b>Head</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CLUSTER__HEAD = eINSTANCE.getCluster_Head();
 
 		/**
 		 * The meta object literal for the '<em><b>Nodes</b></em>' containment reference list feature.
