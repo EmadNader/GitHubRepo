@@ -14,12 +14,26 @@
             genModel="model/SenNet.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated SenNet -->
+      <parser
+            type="netxml"
+            class="org.nader.sennet.util.SennetResourceFactoryImpl"/>
+   </extension>
+
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated SenNet -->
       <package
             uri="http://www.nader.org/sennet/enums"
             class="org.nader.sennet.enums.EnumsPackage"
             genModel="model/SenNet.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated SenNet -->
+      <parser
+            type="enums"
+            class="org.nader.sennet.enums.util.EnumsResourceFactoryImpl"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -30,12 +44,26 @@
             genModel="model/SenNet.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated SenNet -->
+      <parser
+            type="toplevelstructure"
+            class="org.nader.sennet.toplevelstructure.util.ToplevelstructureResourceFactoryImpl"/>
+   </extension>
+
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated SenNet -->
       <package
             uri="http://www.nader.org/sennet/nd"
             class="org.nader.sennet.node.NodePackage"
             genModel="model/SenNet.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated SenNet -->
+      <parser
+            type="node"
+            class="org.nader.sennet.node.util.NodeResourceFactoryImpl"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -46,12 +74,26 @@
             genModel="model/SenNet.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated SenNet -->
+      <parser
+            type="sensors"
+            class="org.nader.sennet.sensors.util.SensorsResourceFactoryImpl"/>
+   </extension>
+
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated SenNet -->
       <package
             uri="http://www.nader.org/sennet/net"
             class="org.nader.sennet.network.NetworkPackage"
             genModel="model/SenNet.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated SenNet -->
+      <parser
+            type="network"
+            class="org.nader.sennet.network.util.NetworkResourceFactoryImpl"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -62,6 +104,13 @@
             genModel="model/SenNet.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated SenNet -->
+      <parser
+            type="job"
+            class="org.nader.sennet.job.util.JobResourceFactoryImpl"/>
+   </extension>
+
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated SenNet -->
       <package
@@ -70,12 +119,26 @@
             genModel="model/SenNet.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated SenNet -->
+      <parser
+            type="jobtrigger"
+            class="org.nader.sennet.job.jobtrigger.util.JobtriggerResourceFactoryImpl"/>
+   </extension>
+
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated SenNet -->
       <package
             uri="http://www.nader.org/sennet/jb/ja"
             class="org.nader.sennet.job.jobaction.JobactionPackage"
             genModel="model/SenNet.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated SenNet -->
+      <parser
+            type="jobaction"
+            class="org.nader.sennet.job.jobaction.util.JobactionResourceFactoryImpl"/>
    </extension>
 
 </plugin>

@@ -10,6 +10,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.nader.sennet,
  org.nader.sennet.enums,
  org.nader.sennet.enums.impl,
+ org.nader.sennet.enums.util,
  org.nader.sennet.impl,
  org.nader.sennet.job,
  org.nader.sennet.job.impl,
@@ -34,5 +35,6 @@ Export-Package: org.nader.sennet,
  org.nader.sennet.toplevelstructure.util,
  org.nader.sennet.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport
 Bundle-ActivationPolicy: lazy

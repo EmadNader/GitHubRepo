@@ -28,7 +28,7 @@
             id="org.nader.sennet.presentation.SennetEditorID"
             name="%_UI_SennetEditor_label"
             icon="icons/full/obj16/SennetModelFile.gif"
-            extensions="sennet"
+            extensions="netxml"
             class="org.nader.sennet.presentation.SennetEditor"
             contributorClass="org.nader.sennet.presentation.SennetActionBarContributor">
       </editor>
