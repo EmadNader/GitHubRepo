@@ -9,13 +9,13 @@
    <extension point="org.eclipse.ui.newWizards">
       <!-- @generated SenNet -->
       <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            id="org.nader.sennet.model.editor.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
             id="org.nader.sennet.presentation.SennetModelWizardID"
             name="%_UI_SennetModelWizard_label"
             class="org.nader.sennet.presentation.SennetModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            category="org.nader.sennet.model.editor.Wizard.category.ID"
             icon="icons/full/obj16/SennetModelFile.gif">
          <description>%_UI_SennetModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
@@ -28,178 +28,22 @@
             id="org.nader.sennet.presentation.SennetEditorID"
             name="%_UI_SennetEditor_label"
             icon="icons/full/obj16/SennetModelFile.gif"
-            extensions="netxml"
+            extensions="sennetmodel"
             class="org.nader.sennet.presentation.SennetEditor"
             contributorClass="org.nader.sennet.presentation.SennetActionBarContributor">
       </editor>
    </extension>
 
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated SenNet -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="org.nader.sennet.node.presentation.NodeModelWizardID"
-            name="%_UI_NodeModelWizard_label"
-            class="org.nader.sennet.node.presentation.NodeModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/NodeModelFile.gif">
-         <description>%_UI_NodeModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
 
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated SenNet -->
-      <editor
-            id="org.nader.sennet.node.presentation.NodeEditorID"
-            name="%_UI_NodeEditor_label"
-            icon="icons/full/obj16/NodeModelFile.gif"
-            extensions="node"
-            class="org.nader.sennet.node.presentation.NodeEditor"
-            contributorClass="org.nader.sennet.node.presentation.NodeActionBarContributor">
-      </editor>
-   </extension>
 
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated SenNet -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="org.nader.sennet.sensors.presentation.SensorsModelWizardID"
-            name="%_UI_SensorsModelWizard_label"
-            class="org.nader.sennet.sensors.presentation.SensorsModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/SensorsModelFile.gif">
-         <description>%_UI_SensorsModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
 
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated SenNet -->
-      <editor
-            id="org.nader.sennet.sensors.presentation.SensorsEditorID"
-            name="%_UI_SensorsEditor_label"
-            icon="icons/full/obj16/SensorsModelFile.gif"
-            extensions="sensors"
-            class="org.nader.sennet.sensors.presentation.SensorsEditor"
-            contributorClass="org.nader.sennet.sensors.presentation.SensorsActionBarContributor">
-      </editor>
-   </extension>
 
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated SenNet -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="org.nader.sennet.network.presentation.NetworkModelWizardID"
-            name="%_UI_NetworkModelWizard_label"
-            class="org.nader.sennet.network.presentation.NetworkModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/NetworkModelFile.gif">
-         <description>%_UI_NetworkModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
 
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated SenNet -->
-      <editor
-            id="org.nader.sennet.network.presentation.NetworkEditorID"
-            name="%_UI_NetworkEditor_label"
-            icon="icons/full/obj16/NetworkModelFile.gif"
-            extensions="sennetmodel"
-            class="org.nader.sennet.network.presentation.NetworkEditor"
-            contributorClass="org.nader.sennet.network.presentation.NetworkActionBarContributor">
-      </editor>
-   </extension>
 
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated SenNet -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="org.nader.sennet.job.presentation.JobModelWizardID"
-            name="%_UI_JobModelWizard_label"
-            class="org.nader.sennet.job.presentation.JobModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/JobModelFile.gif">
-         <description>%_UI_JobModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
 
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated SenNet -->
-      <editor
-            id="org.nader.sennet.job.presentation.JobEditorID"
-            name="%_UI_JobEditor_label"
-            icon="icons/full/obj16/JobModelFile.gif"
-            extensions="job"
-            class="org.nader.sennet.job.presentation.JobEditor"
-            contributorClass="org.nader.sennet.job.presentation.JobActionBarContributor">
-      </editor>
-   </extension>
 
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated SenNet -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="org.nader.sennet.job.jobtrigger.presentation.JobtriggerModelWizardID"
-            name="%_UI_JobtriggerModelWizard_label"
-            class="org.nader.sennet.job.jobtrigger.presentation.JobtriggerModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/JobtriggerModelFile.gif">
-         <description>%_UI_JobtriggerModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
 
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated SenNet -->
-      <editor
-            id="org.nader.sennet.job.jobtrigger.presentation.JobtriggerEditorID"
-            name="%_UI_JobtriggerEditor_label"
-            icon="icons/full/obj16/JobtriggerModelFile.gif"
-            extensions="jobtrigger"
-            class="org.nader.sennet.job.jobtrigger.presentation.JobtriggerEditor"
-            contributorClass="org.nader.sennet.job.jobtrigger.presentation.JobtriggerActionBarContributor">
-      </editor>
-   </extension>
 
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated SenNet -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="org.nader.sennet.job.jobaction.presentation.JobactionModelWizardID"
-            name="%_UI_JobactionModelWizard_label"
-            class="org.nader.sennet.job.jobaction.presentation.JobactionModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/JobactionModelFile.gif">
-         <description>%_UI_JobactionModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
 
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated SenNet -->
-      <editor
-            id="org.nader.sennet.job.jobaction.presentation.JobactionEditorID"
-            name="%_UI_JobactionEditor_label"
-            icon="icons/full/obj16/JobactionModelFile.gif"
-            extensions="jobaction"
-            class="org.nader.sennet.job.jobaction.presentation.JobactionEditor"
-            contributorClass="org.nader.sennet.job.jobaction.presentation.JobactionActionBarContributor">
-      </editor>
-   </extension>
 
 </plugin>

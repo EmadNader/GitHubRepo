@@ -8,13 +8,7 @@ Bundle-Activator: org.nader.sennet.presentation.SenNetEditorPlugin$Implementatio
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: org.nader.sennet.job.jobaction.presentation,
- org.nader.sennet.job.jobtrigger.presentation,
- org.nader.sennet.job.presentation,
- org.nader.sennet.network.presentation,
- org.nader.sennet.node.presentation,
- org.nader.sennet.presentation,
- org.nader.sennet.sensors.presentation
+Export-Package: org.nader.sennet.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.nader.sennet.model.edit;visibility:=reexport,
