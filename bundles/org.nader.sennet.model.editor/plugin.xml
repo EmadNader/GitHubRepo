@@ -112,7 +112,7 @@
             id="org.nader.sennet.network.presentation.NetworkEditorID"
             name="%_UI_NetworkEditor_label"
             icon="icons/full/obj16/NetworkModelFile.gif"
-            extensions="network"
+            extensions="sennetmodel"
             class="org.nader.sennet.network.presentation.NetworkEditor"
             contributorClass="org.nader.sennet.network.presentation.NetworkActionBarContributor">
       </editor>

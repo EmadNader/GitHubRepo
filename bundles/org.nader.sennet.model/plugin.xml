@@ -92,7 +92,7 @@
    <extension point="org.eclipse.emf.ecore.extension_parser">
       <!-- @generated SenNet -->
       <parser
-            type="network"
+            type="sennetmodel"
             class="org.nader.sennet.network.util.NetworkResourceFactoryImpl"/>
    </extension>
 
