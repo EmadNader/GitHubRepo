@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SenNet Generator
+Bundle-SymbolicName: org.nader.sennet.generator
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.nader.sennet.generator.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.apache.commons.cli
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
